@@ -20,6 +20,10 @@ group :development do
 end
 
 
+gem 'bourbon'
+gem 'neat'
+
+
 # For Deploying
 gem 'capistrano'
 gem 'capistrano-rails'
