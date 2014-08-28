@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.1'
+#gem 'rails', '4.1.1'
 
 gem 'sqlite3'
 
@@ -19,6 +19,10 @@ group :development do
 	gem 'spring'
 end
 
+# Unicorn Server
+gem 'unicorn'
+gem 'unicorn-rails'
+gem 'capistrano3-unicorn'
 
 gem 'bourbon'
 gem 'neat'
@@ -29,4 +33,7 @@ gem 'capistrano'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-rvm'
-gem 'unicorn'
+
+#gem 'capistrano'
+gem 'rvm1-capistrano3', require: false
+#gem 'capistrano-bundler', '>= 1.1'
