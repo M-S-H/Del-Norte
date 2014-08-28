@@ -19,10 +19,13 @@ group :development do
 	gem 'spring'
 end
 
+group :production do 
+	gem 'unicorn'
+	gem 'unicorn-rails'
+	gem 'capistrano3-unicorn'
+end
+
 # Unicorn Server
-gem 'unicorn'
-gem 'unicorn-rails'
-gem 'capistrano3-unicorn'
 
 gem 'bourbon'
 gem 'neat'

@@ -126,7 +126,13 @@ section {
 
 
 #info {
-	padding: 80px 0px;
+	padding: 60px 0px;
+
+	h1 {	
+		font-size: 16px;
+		text-transform: uppercase;
+		text-align: center;
+	}
 
 	h2 {
 		font-size: 16px;
@@ -138,7 +144,8 @@ section {
 
 .info-blurb {
 	padding: 0 20px;
-	margin-bottom: 60px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 
 	text-align: center;
 }
