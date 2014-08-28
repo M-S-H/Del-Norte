@@ -1,3 +1,30 @@
+# Define roles, user and IP address of deployment server
+# role :name, %{[user]@[IP adde.]}
+role :app, %w{root@104.131.139.142}
+role :web, %w{root@104.131.139.142}
+role :db,  %w{root@104.131.139.142}
+
+# Define server(s)
+server '104.131.139.142', user: 'root', roles: %w{web}
+
+# SSH Options
+# See the example commented out section in the file
+# for more options.
+set :ssh_options, {
+    forward_agent: false,
+    auth_methods: %w(password),
+    password: 'Hick_man1',
+    user: 'root',
+}
+
+
+
+#set :stage, :production
+
+# Replace 127.0.0.1 with your server's IP address!
+#server '104.131.139.142', user: 'root', password: 'Hick_man1', roles: %w{web app}
+
+=begin
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary server in each group
@@ -43,3 +70,4 @@ server '104.131.139.142', user: 'root', roles: %w{web app}, password: 'Hick_man1
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+=end
