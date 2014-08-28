@@ -1,8 +1,13 @@
+// Debug
+
+
+
 // Colors
 //----------------------------------------------------------
 $blue: #6c858e;
 $dark: #424748;
 $light: #9a9b9b;
+$light-bg: #f3f5f8;
 //----------------------------------------------------------
 
 
@@ -10,6 +15,7 @@ $light: #9a9b9b;
 // Type
 //----------------------------------------------------------
 $default-font: 'Varela', sans-serif;
+$thin-font: 'Roboto', sans-serif;
 
 h1,
 h2,
@@ -25,6 +31,26 @@ h6 {
 p {
 	line-height: 1.7em;
 }
+
+
+.underline {
+	&::after {
+		display: block;
+		content: " ";
+		width: 35px;
+		border: 2px solid $blue;
+		margin: 30px auto;
+	}
+}
+
+
+.fancy-underline {
+	padding-bottom: 30px;
+
+	background: url('h1-bg.png') no-repeat center bottom;
+	background-size: 300px;
+}
+
 //----------------------------------------------------------
 
 
@@ -59,6 +85,7 @@ a {
 
 .container {
 	@include outer-container;
+	padding: 0px 20px;
 }
 
 
