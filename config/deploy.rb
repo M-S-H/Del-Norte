@@ -37,7 +37,9 @@ namespace :deploy do
 
 	task :start do
 		on roles :app do
-			execute "sh /home/apps/start.sh"
+			with path: '/usr/local/rvm/gems/ruby-2.0.0-p353/bin:$PATH' do
+				execute :unicorn_rails, "-c /home/apps/DelNorte/current/config/unicorn.rb -E production -D"
+			end
 		end
 	end
 
