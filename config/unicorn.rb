@@ -7,8 +7,8 @@ preload_app true
 
 
 # Set process id path
-pid "#{@dir}tmp/pids/unicorn.pid"
+pid "#{@dir}/tmp/pids/unicorn.pid"
 
 # Set log file paths
-stderr_path "#{@dir}log/unicorn.stderr.log"
-stdout_path "#{@dir}log/unicorn.stdout.log"
+stderr_path "#{@dir}/log/unicorn.stderr.log"
+stdout_path "#{@dir}/log/unicorn.stdout.log"
