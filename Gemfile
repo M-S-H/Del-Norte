@@ -17,26 +17,23 @@ gem 'sdoc', '~> 0.4.0',				group: :doc
 
 group :development do 
 	gem 'spring'
+
+	# For Deploying
+	gem 'capistrano'
+	gem 'capistrano-rails'
+	gem 'capistrano-bundler'
+	gem 'capistrano-rvm'
 end
 
-group :production do 
+
+group :production do
+	# Unicorn Server
 	gem 'unicorn'
 	gem 'unicorn-rails'
 	gem 'capistrano3-unicorn'
+	gem 'rvm1-capistrano3', require: false
 end
 
-# Unicorn Server
 
 gem 'bourbon'
 gem 'neat'
-
-
-# For Deploying
-gem 'capistrano'
-gem 'capistrano-rails'
-gem 'capistrano-bundler'
-gem 'capistrano-rvm'
-
-#gem 'capistrano'
-gem 'rvm1-capistrano3', require: false
-#gem 'capistrano-bundler', '>= 1.1'

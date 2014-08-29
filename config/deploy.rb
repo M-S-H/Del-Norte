@@ -9,6 +9,10 @@ set :repo_url, 'https://github.com/M-S-H/Del-Norte.git'
 # Define where to put your application code
 set :deploy_to, "/home/apps/DelNorte"
 
+set :rails_env, "production"
+
+set :default_env, {rvm_bin_path: '~/.rvm/bin'}
+
 set :pty, true
 
 set :format, :pretty
