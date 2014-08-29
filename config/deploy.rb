@@ -17,6 +17,13 @@ set :pty, true
 
 set :format, :pretty
 
+
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+end
+
 # Set the post-deployment instructions here.
 # Once the deployment is complete, Capistrano
 # will begin performing them as described.
