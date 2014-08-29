@@ -17,6 +17,8 @@ set :pty, true
 
 set :format, :pretty
 
+after 'deploy:restart', 'unicorn:restart'   # app preloaded
+
 # Set the post-deployment instructions here.
 # Once the deployment is complete, Capistrano
 # will begin performing them as described.
