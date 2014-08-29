@@ -13,7 +13,7 @@ pid "#{@dir}/tmp/pids/unicorn.pid"
 stderr_path "#{@dir}/log/unicorn.stderr.log"
 stdout_path "#{@dir}/log/unicorn.stdout.log"
 
-
+=begin
 before_fork do |server, worker|
 	ActiveRecord::Base.connection.disconnect!
 
@@ -30,3 +30,4 @@ end
 after_fork do |server, worker|
 	ActiveRecord::Base.establish_connection
 end
+=end
