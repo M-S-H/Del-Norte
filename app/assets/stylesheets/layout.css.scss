@@ -173,7 +173,7 @@ section {
 	min-height: 350px;
 	padding: 50px;
 	
-	background: url('ministries.jpg') no-repeat center center;
+	background: image-url('ministries.jpg') no-repeat center center;
 	background-size: cover;
 
 	@include media(769px) {
