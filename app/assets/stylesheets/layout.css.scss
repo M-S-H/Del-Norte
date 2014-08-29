@@ -209,6 +209,7 @@ section {
 
 
 #staff {
+	margin-top: 50px;
 	h1 {
 		margin-bottom: 50px;
 	}
@@ -216,7 +217,7 @@ section {
 
 
 .staff {
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	@include omega(3n);
 
 	img {
@@ -224,14 +225,14 @@ section {
 	}
 
 	.staff-image {
-		width: 180px;
-		height: 180px;
+		width: 200px;
+		height: 200px;
 		margin: auto;
 	}
 
 	.staff-mask {
 		position: relative;
-		top: -185px;
+		top: -205px;
 	}
 	
 	h2 {
@@ -241,6 +242,17 @@ section {
 	}
 
 	text-align: center;
+
+	.staff-email {
+		width: 30px;
+		height: 30px;
+		
+		background-color: $blue;
+		border-radius: 50%;
+		color: white;
+		line-height: 30px;
+		margin: auto;
+	}
 }
 
 
