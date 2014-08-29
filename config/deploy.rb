@@ -19,12 +19,31 @@ set :format, :pretty
 
 set :rails_env, :production
 set :unicorn_binary, "/usr/bin/unicorn"
-set :unicorn_config, "/home/apps/DelNorte/current/config/unicorn.rb"
-set :unicorn_pid, "/home/apps/DelNorte/current/tmp/pids/unicorn.pid"
+#set :unicorn_config, "/home/apps/DelNorte/current/config/unicorn.rb"
+#set :unicorn_pid, "/home/apps/DelNorte/current/tmp/pids/unicorn.pid"
+
+SSHKit.config.command_map[:unicorn_rails] = "/usr/local/rvm/gems/ruby-2.0.0-p353/bin/unicorn_rails"
+
+@unicorn_config = "/home/apps/DelNorte/current/config/unicorn.rb"
+@unicorn_pid = "/home/apps/DelNorte/current/tmp/pids/unicorn.pid"
 
 namespace :deploy do
+
+	task :stop do
+		on roles :app do
+			execute "sh /home/apps/stop.sh"
+		end
+	end
+
+	task :start do
+		on roles :app do
+			execute "sh /home/apps/start.sh"
+		end
+	end
+
 	task :restart do 
-		
+		stop
+		start
 	end
 
 =begin
