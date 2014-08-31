@@ -184,7 +184,10 @@ section {
 	color: white;
 
 	h2 {
-		font-size: 48px;
+		font-size: 24px;
+		@include media(769px) {
+			font-size: 48px;
+		}
 		text-transform: uppercase;
 		letter-spacing: 10px;
 	}
