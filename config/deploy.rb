@@ -51,10 +51,14 @@ namespace :deploy do
 end
 =end
 
-namespace: deploy do
-	task :restart do 
+task :test do
+	on roles(:app) do
 		execute "service unicorn restart"
 	end
+end
+
+namespace :deploy do
+
 end
 
 # Set the post-deployment instructions here.
