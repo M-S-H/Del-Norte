@@ -1,0 +1,57 @@
+#nav-trigger {
+	margin-top: -7px;
+	display: block;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+
+#slideout {
+	width: 220px;
+	height: 100%;
+	margin: 0;
+	@include position(fixed, 0px auto 0px 0px);
+	@include transform(translateX(-220px));
+	@include transition(all .25s linear);
+
+	background-color: white;
+	z-index: 500;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+
+	li a {
+		display: block;
+		margin: 0;
+		padding: 20px 20px;
+		border-bottom: 1px dotted $light-bg;
+
+		&:hover {
+			background-color: $light-bg;
+		}
+	}
+
+	&.is-visible {
+		@include transform(translateX(0));
+	}
+}
+
+
+#nav-screen {
+	@include position(fixed, 0px 0px 0px 0px);
+	@include transition;
+	background-color: black;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 400;
+
+	&.is-visible {
+		opacity: 0.6;
+		visibility: visible;
+	}
+}

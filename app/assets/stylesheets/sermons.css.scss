@@ -1,0 +1,19 @@
+#main-sermon-wrap {
+	background-color: $light-bg;
+	height: 300px;
+}
+
+
+#sermon-listing {
+	margin-top: 20px;
+}
+
+
+.sermon {
+	height: 100px;
+	margin-bottom: 20px;
+	@include omega(3n);
+	
+
+	background-color: #eee;
+}

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sermons
+
 	root 'application#index'
 
 	resources :pages

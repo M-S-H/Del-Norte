@@ -12,6 +12,26 @@
 </head>
 <body>
 
+	<header>
+		<div class="container">
+			<div id="logo">
+				<%= image_tag 'logo.png', width: '300px', id: 'logo-norm' %>
+				<%= image_tag 'logo_mobile.png', height: '40px', id: 'logo-mob' %>
+			</div>
+
+			<nav>
+				<%= render 'layouts/links' %>
+				<a id="nav-trigger"><i class="fa fa-bars"></i></a>
+			</nav>
+		</div>
+	</header>
+
+	<nav id="slideout">
+		<%= render 'layouts/links' %>
+	</nav>
+
+	<div id="nav-screen"></div>
+
 	<%= yield %>
 
 </body>

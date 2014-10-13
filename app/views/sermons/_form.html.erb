@@ -1,0 +1,17 @@
+<%= form_for(@sermon) do |f| %>
+  <% if @sermon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sermon.errors.count, "error") %> prohibited this sermon from being saved:</h2>
+
+      <ul>
+      <% @sermon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
