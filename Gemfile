@@ -25,15 +25,10 @@ group :development do
 	gem 'capistrano-rvm'
 end
 
-#gem 'capistrano-unicorn'
-
 
 group :production do
-	# Unicorn Server
 	gem 'unicorn'
 	gem 'unicorn-rails'
-	#gem 'capistrano3-unicorn'
-	#gem 'rvm1-capistrano3', require: false
 end
 
 
