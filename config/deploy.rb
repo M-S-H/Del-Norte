@@ -18,10 +18,11 @@ set :pty, true
 set :format, :pretty
 
 set :rails_env, :production
-set :unicorn_binary, "/usr/bin/unicorn"
+#set :unicorn_binary, "/usr/bin/unicorn"
 #set :unicorn_config, "/home/apps/DelNorte/current/config/unicorn.rb"
 #set :unicorn_pid, "/home/apps/DelNorte/current/tmp/pids/unicorn.pid"
 
+=begin
 SSHKit.config.command_map[:unicorn_rails] = "/usr/local/rvm/gems/ruby-2.0.0-p353/bin/unicorn_rails"
 
 @unicorn_config = "/home/apps/DelNorte/current/config/unicorn.rb"
@@ -47,25 +48,13 @@ namespace :deploy do
 		stop
 		start
 	end
-
-=begin
-	task :start, :roles => :app, :except => { :no_release => true } do 
-		run "unicorn -c #{unicorn_config} -E #{rails_env} -D"
-	end
-	task :stop, :roles => :app, :except => { :no_release => true } do 
-		run "kill `cat #{unicorn_pid}`"
-	end
-	task :graceful_stop, :roles => :app, :except => { :no_release => true } do
-		run "kill -s QUIT `cat #{unicorn_pid}`"
-	end
-	task :reload, :roles => :app, :except => { :no_release => true } do
-		run "kill -s USR2 `cat #{unicorn_pid}`"
-	end
-	task :restart, :roles => :app, :except => { :no_release => true } do
-		stop
-		start
-	end
+end
 =end
+
+namespace: deploy do
+	task :restart do 
+		execute "service unicorn restart"
+	end
 end
 
 # Set the post-deployment instructions here.
