@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	welcome();
+});
 
-	jQuery(window).on( "orientationchange", function() {
-		welcome();
-	});
+$(window).on("orientationchange", function() {
+	welcome();
 });
 
 
