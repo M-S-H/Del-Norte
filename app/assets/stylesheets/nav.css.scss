@@ -25,14 +25,26 @@ nav ul {
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 
+	li {
+		&:active {
+			background-color: $light-bg;
+			color: white;
+		}
+
+		&:hover {
+			background-color: $blue;
+			color: white;
+		}
+	}
+
 	li a {
 		display: block;
 		margin: 0;
 		padding: 20px 20px;
-		border-bottom: 1px dotted $light-bg;
+		border-bottom: 1px dotted white;
 
 		&:hover {
-			background-color: $light-bg;
+			color: white;
 		}
 	}
 

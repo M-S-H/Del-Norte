@@ -17,14 +17,13 @@ header {
 	height: 100px;
 	@media(max-width: 769px) {
 		height: 60px;
+		//background-color: rgba(255,255,255,0.5);
 	}
 	width: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 100;
-
-	background-color: rgba(255,255,255,0.5);
 
 	nav {
 		margin-top: 24px;
@@ -103,8 +102,13 @@ section {
 	text-align: center;
 
 	img {
+		width: 100px;
 		margin-bottom: 50px;
 		opacity: 0.5;
+
+		@media(max-width: 769px) {
+			width: 60px;
+		}
 	}
 
 	h1 {
@@ -113,6 +117,10 @@ section {
 		font-family: $thin-font;
 		font-weight: 300;
 		color: $blue;
+
+		@media(max-width: 769px) {
+			font-size: 24px;
+		}
 	}
 
 	p {
@@ -122,6 +130,10 @@ section {
 		text-transform: uppercase;
 		color: $blue;
 		opacity: 0.7;
+
+		@media(max-width: 769px) {
+			font-size: 12px;
+		}
 	}
 
 	a {
@@ -138,6 +150,10 @@ section {
 
 		&:hover {
 			opacity: 0.7;
+		}
+
+		@media(max-width: 769px) {
+			display: none;
 		}
 	}
 }
