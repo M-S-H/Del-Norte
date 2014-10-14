@@ -3,6 +3,7 @@ $(document).ready(function() {
 });
 
 $(window).on("orientationchange", function() {
+	alert("change");
 	welcome();
 });
 
@@ -13,6 +14,7 @@ function welcome() {
 	height = $(window).height();
 	welcome.css('height', height)
 
+	alert(welcome.css('height'));
 
 	// Center Welcome content
 	var content = $('#welcome-content');
