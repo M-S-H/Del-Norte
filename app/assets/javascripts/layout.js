@@ -3,7 +3,6 @@ $(document).ready(function() {
 });
 
 $(window).on("orientationchange", function() {
-	alert("change");
 	welcome();
 });
 
@@ -12,13 +11,17 @@ function welcome() {
 	// Resize welcome element on load
 	var welcome = $('#welcome');
 	height = $(window).height();
-	welcome.css('height', height)
+	welcome.css('height', height);
 
-	alert(welcome.css('height'));
+	//alert(height);
 
+	/*
 	// Center Welcome content
 	var content = $('#welcome-content');
 	content_height = content.height();
+	//alert(content_height);
 	diff = height - content_height;
-	content.css("padding-top", diff/2 - content_height/2);
+	//alert(diff);
+	content.css("padding-top", diff/2);
+	*/
 }
