@@ -4,7 +4,8 @@ class SermonsController < ApplicationController
 	# GET /sermons
 	# GET /sermons.json
 	def index
-		@sermons = Sermon.all
+		@sermons = VIDEO_CLIENT.my_videos.videos
+		@image = Base64.encode64(open("http://i.ytimg.com/vi/il74dSzmV10/hqdefault.jpg").read)
 	end
 
 	# GET /sermons/1

@@ -1,19 +1,87 @@
-#main-sermon-wrap {
-	background-color: $light-bg;
-	height: 300px;
+#main-sermon-bg {
+	padding-top: 120px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+
+	//background-color: $light-bg;
+	background-position: 50% 50%;
+	background-repeat: no-repeat no-repeat;
+	background-size: cover;
+}
+
+
+#current-sermon-wrap {
+	max-width: 800px;
+	margin: auto;
+	padding: 0px 20px;
+}
+
+
+#current-sermon {
+	height: 0;
+	padding-top: 25px;
+	padding-bottom: 57.25%;
+	margin-bottom: 10px;
+	position: relative;
+	overflow: hidden;
+
+	box-shadow: 0 0 15px rgba(0,0,0,0.6);
+
+	iframe {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+}
+
+
+#current-sermon-info {
+	width: 100%;
+	max-width: 760px;
+	margin: auto;
+	padding: 0px 20px;
+
+	background-color: white;
+	box-shadow: 0 0 3px rgba(0,0,0,0.3);
+
+	h1 {
+		color: #444;
+		font-size: 16px;
+	}
+
+	p {
+		color: $blue;
+		font-size: 12px;
+	}
 }
 
 
 #sermon-listing {
-	margin-top: 20px;
+
 }
 
 
 .sermon {
-	height: 100px;
 	margin-bottom: 20px;
 	@include omega(3n);
 	
+	background-color: #fafafa;
+	box-shadow: 0px 1px 4px rgba(0,0,0,0.08);
 
-	background-color: #eee;
+	.sermon-thumb {
+		height: 150px;
+		overflow: hidden;
+	}
+
+	.sermon-info {
+		padding: 20px;
+	}
+}
+
+
+#s-bg-image,
+#sermon-canvas {
+	display: none;
 }

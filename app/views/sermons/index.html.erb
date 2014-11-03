@@ -1,5 +1,28 @@
-<div id="main-sermon-wrap">
-	<div id="video"></div>
+<div id="main-sermon-bg">
+	<%= image_tag "data:image/jpeg;base64,#{@image}", id: "s-bg-image", width: "2000px", height: '300px', onload: "testblur()" %>
+
+	<canvas id="sermon-canvas" width="2000px" height="300px">
+	</canvas>
+
+	<div id="current-sermon-wrap">
+		<div id="current-sermon">
+			<%= @sermons[0].embed_html5({
+					:class => 'video-player', :id => 'my-video',
+					:width => '560',
+					:height => '315',
+					:frameborder => '0', 
+					:controlls => '0',
+					fullscreen: true
+			}).html_safe %>
+		</div>
+	</div>
+
+	<!--
+	<div id="current-sermon-info">
+		<h1><%= @sermons[0].title %></h1>
+		<p><%= @sermons[0].description %></p>
+	</div>
+	-->
 </div>
 
 <div id="sermon-search">
@@ -7,37 +30,15 @@
 </div>
 
 <div id="sermon-listing" class="container">
-	<div class="sermon column-4"></div>
-	<div class="sermon column-4"></div>
-	<div class="sermon column-4"></div>
-	<div class="sermon column-4"></div>
+	<% @sermons.each_with_index do |s, i| %>
+		<div class="sermon column-4">
+			<div class="sermon-thumb">
+				<%= image_tag s.thumbnails[2].url, width: '100%' %>
+			</div>
+			<div class="sermon-info">
+				<h3><%= s.title %></h3>
+				<p><%= s.description %></p>
+			</div>
+		</div>
+	<% end %>
 </div>
-
-
-
-
-<!--
-<h1>Listing sermons</h1>
-
-<table>
-	<thead>
-		<tr>
-			<th colspan="3"></th>
-		</tr>
-	</thead>
-
-	<tbody>
-		<% @sermons.each do |sermon| %>
-			<tr>
-				<td><%= link_to 'Show', sermon %></td>
-				<td><%= link_to 'Edit', edit_sermon_path(sermon) %></td>
-				<td><%= link_to 'Destroy', sermon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Sermon', new_sermon_path %>
--->
