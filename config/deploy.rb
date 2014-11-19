@@ -13,7 +13,10 @@ set :deploy_to, "/home/apps/DelNorte"
 
 set :rails_env, "production"
 
-set :default_env, {rvm_bin_path: '~/.rvm/bin'}
+set :default_env, {
+	rvm_bin_path: '~/.rvm/bin',
+	'SECRET_KEY_BASE' => '35e5352b7431887d7707cbc912848abe4566c3ca124b8f654f30ccad999114dd022c6026d79479cfadc769b459ea285c96ddaeb314c9f863aa543c3a0d6d68ff'
+}
 
 set :pty, true
 
