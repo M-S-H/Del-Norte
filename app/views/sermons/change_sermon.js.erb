@@ -1,0 +1,8 @@
+// Change src of image element
+$("#s-bg-image").attr("src", "data:image/jpeg;base64,<%=j @image %>");
+
+// Replace Video
+$('#sermon-player').remove();
+var player = $("<%=j @player %>").hide();
+$('#current-sermon').append(player);
+player.fadeIn('slow');

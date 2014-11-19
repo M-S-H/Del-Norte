@@ -1,3 +1,124 @@
+#sermon-bg {
+	padding-top: 120px;
+	padding-right: 300px;
+	height: 100%;
+	overflow: hidden;
+
+	//background-color: #444;
+	background-position: 50% 50%;
+	background-repeat: no-repeat no-repeat;
+	background-size: cover;
+
+	-webkit-transition: background-image 1.0s ease-in-out;
+	-moz-transition: background-image 1.0s ease-in-out;
+	-ms-transition: background-image 1.0s ease-in-out;
+	-o-transition: background-image 1.0s ease-in-out;
+	transition: background-image 1.0s ease-in-out;
+}
+
+
+#sermon-screen {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: black;
+	opacity: 0.3;
+}
+
+
+#sermon-list {
+	width: 280px;
+	height: 95%;
+	margin-right: -280px;
+	position: relative;
+	float: right;
+
+	background-color: white;
+	overflow: scroll;
+
+	#search-sermons {
+		width: 260px;
+		border: 1px solid $blue;
+		margin-left: 10px;
+		margin-top: 10px;
+		margin-bottom: 5px;
+		padding: 10px 10px;
+
+		&:focus {outline: none;}
+	}
+}
+
+
+.sermon-listing {
+	width: 260px;
+	height: 70px;
+	margin: 5px 10px;
+	background-color: #eee;
+	cursor: pointer;
+
+	&:hover {
+		color: white;
+		background-color: $blue;
+	}
+
+
+	.sermon-thumb {
+		width: 50px;
+		height: 50px;
+		margin-left: 10px;
+		margin-top: 10px;
+		float: left;
+
+		border-radius: 25px;
+		overflow: hidden;
+	}
+
+	.sermon-title {
+		width: 180px;
+		padding-top: 18px;
+		float: right;
+		font-size: 12px;
+
+		h4 {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+
+#current-sermon {
+	width: 90%;
+	height: 100%;
+	margin: auto;
+	height: 0;
+	padding-bottom: 57.25%;
+	margin-bottom: 10px;
+	position: relative;
+	overflow: hidden;
+
+	box-shadow: 0 0 15px rgba(0,0,0,0.6);
+	/* overflow: scroll; */
+
+	iframe {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 100;
+	}
+}
+
+
+#s-bg-image,
+#sermon-canvas {
+	display: none;
+}
+
+/*
 #main-sermon-bg {
 	padding-top: 120px;
 	padding-bottom: 20px;
@@ -7,6 +128,11 @@
 	background-position: 50% 50%;
 	background-repeat: no-repeat no-repeat;
 	background-size: cover;
+}
+
+
+#main-sermon-bg::after {
+
 }
 
 
@@ -33,6 +159,7 @@
 		width: 100%;
 		height: 100%;
 		position: absolute;
+		z-index: 100;
 	}
 }
 
@@ -85,3 +212,4 @@
 #sermon-canvas {
 	display: none;
 }
+*/

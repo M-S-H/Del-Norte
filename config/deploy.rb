@@ -5,6 +5,8 @@ set :application, 'DelNorte'
 # set :repo_url, 'https://github.com/[user name]/[application name].git'
 set :scm, :git
 set :repo_url, 'https://github.com/M-S-H/Del-Norte.git'
+#set :scm_username, "git_username"
+#set :scm_password, "git_password"
 
 # Define where to put your application code
 set :deploy_to, "/home/apps/DelNorte"

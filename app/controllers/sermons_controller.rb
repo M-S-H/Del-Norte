@@ -4,13 +4,57 @@ class SermonsController < ApplicationController
 	# GET /sermons
 	# GET /sermons.json
 	def index
-		@sermons = VIDEO_CLIENT.my_videos.videos
-		@image = Base64.encode64(open("http://i.ytimg.com/vi/il74dSzmV10/hqdefault.jpg").read)
+		@sermons = VIDEO_CLIENT.playlist("PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ").videos
+		#@image = Base64.encode64(open("http://i.ytimg.com/vi/il74dSzmV10/hqdefault.jpg").read)
+		thumbs = @sermons.first.thumbnails
+		max = 0
+		@image = ""
+
+		if thumbs[3]
+			@image = thumbs[3].url
+		else
+			@image = thumbs.first
+		end
+
+		# thumbs.each do |t|
+		# 	if t.width > max
+		# 		@image = t.url
+		# 	end
+		# end
+
+		@image = Base64.encode64(open(@image).read)
+	end
+
+	def change_sermon
+		@sermon = VIDEO_CLIENT.my_video params[:id]
+		@image = @sermon.thumbnails[3].url
+		@image = Base64.encode64(open(@image).read)
+		@player = @sermon.embed_html5({
+			:class => 'video-player', :id => 'my-video',
+			:width => '560',
+			:height => '315',
+			:frameborder => '0', 
+			:controlls => '0',
+			fullscreen: true
+		}).html_safe
+
+		@id = params[:id]
 	end
 
 	# GET /sermons/1
 	# GET /sermons/1.json
 	def show
+		@sermon = VIDEO_CLIENT.my_video params[:id]
+		@image = @sermon.thumbnails[3].url
+		@image = Base64.encode64(open(@image).read)
+		@player = @sermons[0].embed_html5({
+			:class => 'video-player', :id => 'my-video',
+			:width => '560',
+			:height => '315',
+			:frameborder => '0', 
+			:controlls => '0',
+			fullscreen: true
+		}).html_safe
 	end
 
 	# GET /sermons/new
