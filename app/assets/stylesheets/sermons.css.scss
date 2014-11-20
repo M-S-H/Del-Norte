@@ -9,11 +9,13 @@
 	background-repeat: no-repeat no-repeat;
 	background-size: cover;
 
+	/*
 	-webkit-transition: background-image 1.0s ease-in-out;
 	-moz-transition: background-image 1.0s ease-in-out;
 	-ms-transition: background-image 1.0s ease-in-out;
 	-o-transition: background-image 1.0s ease-in-out;
 	transition: background-image 1.0s ease-in-out;
+	*/
 }
 
 
@@ -73,6 +75,11 @@
 
 		border-radius: 25px;
 		overflow: hidden;
+
+		img {
+			margin-left: -25px;
+			margin-top: -12.5px;
+		}
 	}
 
 	.sermon-title {
@@ -86,6 +93,13 @@
 			padding: 0;
 		}
 	}
+}
+
+
+#current-sermon-wrap {
+	max-width: 1000px;
+	margin: auto;
+	padding: 0px 20px;
 }
 
 

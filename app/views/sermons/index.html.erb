@@ -8,23 +8,25 @@
 		<% @sermons.each_with_index do |s| %>
 			<div class="sermon-listing" id="<%= s.unique_id %>">
 				<div class="sermon-thumb">
-					<%= image_tag s.thumbnails[2].url, height: '50px' %>
+					<%= image_tag s.thumbnails[2].url, height: '75px' %>
 				</div>
 				<div class="sermon-title"><h4><%= s.title %></h4></div>
 			</div>
 		<% end %>
 	</div>
 	
-	<div id="current-sermon">
-		<%= @sermons[0].embed_html5({
-				:class => 'video-player', 
-				:id => 'sermon-player',
-				:width => '560',
-				:height => '315',
-				:frameborder => '0', 
-				:controlls => '0',
-				fullscreen: true
-		}).html_safe %>
+	<div id="current-sermon-wrap">
+		<div id="current-sermon">
+			<%= @sermons[0].embed_html5({
+					:class => 'video-player', 
+					:id => 'sermon-player',
+					:width => '560',
+					:height => '315',
+					:frameborder => '0', 
+					:controlls => '0',
+					fullscreen: true
+			}).html_safe %>
+		</div>
 	</div>
 </div>
 

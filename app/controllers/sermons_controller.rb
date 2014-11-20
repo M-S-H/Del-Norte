@@ -5,7 +5,6 @@ class SermonsController < ApplicationController
 	# GET /sermons.json
 	def index
 		@sermons = VIDEO_CLIENT.playlist("PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ").videos
-		#@image = Base64.encode64(open("http://i.ytimg.com/vi/il74dSzmV10/hqdefault.jpg").read)
 		thumbs = @sermons.first.thumbnails
 		max = 0
 		@image = ""
@@ -30,7 +29,8 @@ class SermonsController < ApplicationController
 		@image = @sermon.thumbnails[3].url
 		@image = Base64.encode64(open(@image).read)
 		@player = @sermon.embed_html5({
-			:class => 'video-player', :id => 'my-video',
+			:class => 'video-player', 
+			:id => 'sermon-player',
 			:width => '560',
 			:height => '315',
 			:frameborder => '0', 
