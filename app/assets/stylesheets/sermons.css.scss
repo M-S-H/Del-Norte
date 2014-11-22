@@ -4,18 +4,22 @@
 	height: 100%;
 	overflow: hidden;
 
+	@media (max-width: 769px) {
+		width: 100%;
+		padding-right: 0;
+		padding-top: 80px;
+	}
+
 	//background-color: #444;
 	background-position: 50% 50%;
 	background-repeat: no-repeat no-repeat;
 	background-size: cover;
 
-	/*
 	-webkit-transition: background-image 1.0s ease-in-out;
 	-moz-transition: background-image 1.0s ease-in-out;
 	-ms-transition: background-image 1.0s ease-in-out;
 	-o-transition: background-image 1.0s ease-in-out;
 	transition: background-image 1.0s ease-in-out;
-	*/
 }
 
 
@@ -36,6 +40,12 @@
 	margin-right: -280px;
 	position: relative;
 	float: right;
+
+	@media (max-width: 769px) {
+		width: 100%;
+		margin-right: 0;
+		float: none;
+	}
 
 	background-color: white;
 	overflow: scroll;
@@ -97,9 +107,17 @@
 
 
 #current-sermon-wrap {
+	width: 100%;
 	max-width: 1000px;
 	margin: auto;
 	padding: 0px 20px;
+	float: left;
+
+	@media (max-width: 769px) {
+		width: 100%;
+		padding-right: 0;
+		padding-bottom: 20px;
+	}
 }
 
 

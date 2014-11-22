@@ -1,20 +1,6 @@
 <div id="sermon-screen"></div>
 
 <div id="sermon-bg">
-	<div id="sermon-list">
-		<div id="sermon-search">
-			<%= text_field_tag "search-sermons", "", placeholder: "Search Sermons" %>
-		</div>
-		<% @sermons.each_with_index do |s| %>
-			<div class="sermon-listing" id="<%= s.unique_id %>">
-				<div class="sermon-thumb">
-					<%= image_tag s.thumbnails[2].url, height: '75px' %>
-				</div>
-				<div class="sermon-title"><h4><%= s.title %></h4></div>
-			</div>
-		<% end %>
-	</div>
-	
 	<div id="current-sermon-wrap">
 		<div id="current-sermon">
 			<%= @sermons[0].embed_html5({
@@ -28,74 +14,22 @@
 			}).html_safe %>
 		</div>
 	</div>
+
+	<div id="sermon-list">
+		<div id="sermon-search">
+			<%= text_field_tag "search-sermons", "", placeholder: "Search Sermons" %>
+		</div>
+		<% @sermons.each_with_index do |s| %>
+			<div class="sermon-listing" id="<%= s.unique_id %>">
+				<div class="sermon-thumb">
+					<%= image_tag s.thumbnails[2].url, height: '75px' %>
+				</div>
+				<div class="sermon-title"><h4><%= s.title %></h4></div>
+			</div>
+		<% end %>
+	</div>
 </div>
 
 <%= image_tag "data:image/jpeg;base64,#{@image}", id: "s-bg-image", width: "800px", height: '800px', onload: "initblur()" %>
 <canvas id="sermon-canvas" width="800px" height="800px">
 </canvas>
-
-<!--
-<div id="main-sermon-bg">
-	<div id="current-sermon-wrap">
-		<div id="current-sermon">
-			<%= @sermons[0].embed_html5({
-					:class => 'video-player', :id => 'my-video',
-					:width => '560',
-					:height => '315',
-					:frameborder => '0', 
-					:controlls => '0',
-					fullscreen: true
-			}).html_safe %>
-		</div>
-	</div>
-</div>
-
-<div id="sermon-listing">
-
-</div>
--->
-
-<!--
-<div id="main-sermon-bg">
-	<%= image_tag "data:image/jpeg;base64,#{@image}", id: "s-bg-image", width: "2000px", height: '300px', onload: "testblur()" %>
-
-	<canvas id="sermon-canvas" width="2000px" height="300px">
-	</canvas>
-
-	<div id="current-sermon-wrap">
-		<div id="current-sermon">
-			<%= @sermons[0].embed_html5({
-					:class => 'video-player', :id => 'my-video',
-					:width => '560',
-					:height => '315',
-					:frameborder => '0', 
-					:controlls => '0',
-					fullscreen: true
-			}).html_safe %>
-		</div>
-	</div>
-
-	<div id="current-sermon-info">
-		<h1><%= @sermons[0].title %></h1>
-		<p><%= @sermons[0].description %></p>
-	</div>
-</div>
-
-<div id="sermon-search">
-
-</div>
-
-<div id="sermon-listing" class="container">
-	<% @sermons.each_with_index do |s, i| %>
-		<div class="sermon column-4">
-			<div class="sermon-thumb">
-				<%= image_tag s.thumbnails[2].url, width: '100%' %>
-			</div>
-			<div class="sermon-info">
-				<h3><%= s.title %></h3>
-				<p><%= s.description %></p>
-			</div>
-		</div>
-	<% end %>
-</div>
-->

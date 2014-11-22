@@ -38,12 +38,15 @@ function draw() {
 $(document).ready(function() {
 	// Change Sermons
 	$('.sermon-listing').click(function() {
+		$('#current-sermon').fadeOut('slow');
+		$('#current-sermon').remove();
 		$.ajax({
 			url: '/change_sermon',
 			data: { id: $(this).attr("id") },
 			//contentType: 'application/json; charset=utf-8',
 			success: function (response) {
 				//alert(response.status);
+				//$("#current-sermon").fadeIn('slow');
 			},
 			error: function () {
 				//alert("error");
