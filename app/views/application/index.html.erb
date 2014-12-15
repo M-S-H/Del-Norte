@@ -26,17 +26,18 @@
 		<div class="info-blurb column-4">
 			<div class="info-icon"><i class="fa fa-group"></i></div>
 			<h2 class="underline">Services</h2>
-			<p>Check out our sermons. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+			<p>8:30am – Lead by our choir and orchestra<br>
+			11am – Lead by our Praise Team</p>
 		</div>
 		<div class="info-blurb column-4">
 			<div class="info-icon"><i class="fa fa-globe"></i></div>
 			<h2 class="underline">Spanish Service</h2>
-			<p>Check out our sermons. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+			<p>Upstairs in Room 230 at 11am.</p>
 		</div>
 		<div class="info-blurb column-4">
 			<div class="info-icon"><i class="fa fa-book"></i></div>
 			<h2 class="underline">Bible Study</h2>
-			<p>Check out our sermons. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+			<p>Classes for any and every age group at 9:45am</p>
 		</div>
 	</div>
 </section>
@@ -66,7 +67,7 @@
 			</div>
 			<h2 class="underline">Brad Kelly</h2>
 			<p>Senior Pastor</p>
-			<div class="staff-email"><i class="fa fa-envelope"></i></div>
+			<%= mail_to "brad@dnbc.org", raw('<div class="staff-email"><i class="fa fa-envelope"></i></div>') %>
 		</div>
 
 		<div class="staff column-4">
@@ -76,7 +77,7 @@
 			</div>
 			<h2 class="underline">Kevin Warner</h2>
 			<p>Growth Pastor</p>
-			<div class="staff-email"><i class="fa fa-envelope"></i></div>
+			<%= mail_to "kevin@dnbc.org", raw('<div class="staff-email"><i class="fa fa-envelope"></i></div>') %>
 		</div>
 
 		<div class="staff column-4">
@@ -85,8 +86,8 @@
 				<%= image_tag "staff_mask.png", width: "200px", class: "staff-mask" %>
 			</div>
 			<h2 class="underline">Ira Pinkston</h2>
-			<p>Music Pastor</p>
-			<div class="staff-email"><i class="fa fa-envelope"></i></div>
+			<p>Worship Pastor</p>
+			<%= mail_to "ira@dnbc.org", raw('<div class="staff-email"><i class="fa fa-envelope"></i></div>') %>
 		</div>
 
 		<div class="staff column-4">
@@ -95,8 +96,8 @@
 				<%= image_tag "staff_mask.png", width: "200px", class: "staff-mask" %>
 			</div>
 			<h2 class="underline">Andy Byers</h2>
-			<p>Youth Pastor</p>
-			<div class="staff-email"><i class="fa fa-envelope"></i></div>
+			<p>Student Pastor</p>
+			<%= mail_to "andy@dnbc.org", raw('<div class="staff-email"><i class="fa fa-envelope"></i></div>') %>
 		</div>
 
 		<div class="staff column-4">
@@ -106,7 +107,7 @@
 			</div>
 			<h2 class="underline">Hannah Bergstrasser</h2>
 			<p>Children's Minister</p>
-			<div class="staff-email"><i class="fa fa-envelope"></i></div>
+			<%= mail_to "hannah@dnbc.org", raw('<div class="staff-email"><i class="fa fa-envelope"></i></div>') %>
 		</div>
 
 		<div class="staff column-4">
@@ -114,9 +115,9 @@
 				<%= image_tag "staff/judy.jpg", width: "200px" %>
 				<%= image_tag "staff_mask.png", width: "200px", class: "staff-mask" %>
 			</div>
-			<h2 class="underline">Judy Hain</h2>
+			<h2 class="underline">Judi Hain</h2>
 			<p>Administrator</p>
-			<div class="staff-email"><i class="fa fa-envelope"></i></div>
+			<%= mail_to "judi@dnbc.org", raw('<div class="staff-email"><i class="fa fa-envelope"></i></div>') %>
 		</div>
 	</div>
 
@@ -127,22 +128,29 @@
 	<h1 class="fancy-underline">Contact Us</h1>
 
 	<div class="container">
-		<div class="column-4 contact-card">
+		<div class="column-3 contact-card">
+			<i class="fa fa-clock-o"></i>
+			<h2 class="underline">Office Hours</h2>
+			M-Th: 8:30am – 4:30pm<br>
+			Closed for Lunch 12-1
+		</div>
+		<div class="column-3 contact-card">
 			<i class="fa fa-map-marker"></i>
 			<h2 class="underline">Address</h2>
-			Address Goes Here
+			5800 Montgomery Blvd<br>
+			Albuquerque, NM 87109
 		</div>
 
-		<div class="column-4 contact-card">
+		<div class="column-3 contact-card">
 			<i class="fa fa-phone"></i>
 			<h2 class="underline">Phone</h2>
-			(000) 000-0000
+			(505) 881-9711<br>
 		</div>
 
-		<div class="column-4 contact-card">
+		<div class="column-3 contact-card">
 			<i class="fa fa-envelope"></i>
 			<h2 class="underline">Email</h2>
-			something@something.com
+			dnbc@dnbc.org<br>
 		</div>
 	</div>
 </section>

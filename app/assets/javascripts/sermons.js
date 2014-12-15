@@ -38,8 +38,8 @@ function draw() {
 $(document).ready(function() {
 	// Change Sermons
 	$('.sermon-listing').click(function() {
-		$('#current-sermon').fadeOut('slow');
-		$('#current-sermon').remove();
+		// $('#current-sermon').fadeOut('slow');
+		// $('#current-sermon').remove();
 		$.ajax({
 			url: '/change_sermon',
 			data: { id: $(this).attr("id") },

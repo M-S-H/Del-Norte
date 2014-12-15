@@ -28,7 +28,6 @@ class SermonsController < ApplicationController
 		@sermon = VIDEO_CLIENT.my_video params[:id]
 		@image = @sermon.thumbnails[3].url
 		@image = Base64.encode64(open(@image).read)
-		puts @image
 		@player = @sermon.embed_html5({
 			:class => 'video-player', 
 			:id => 'sermon-player',
