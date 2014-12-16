@@ -2,6 +2,7 @@ $(document).ready(function() {
 	welcome();
 });
 
+
 $(window).on("orientationchange", function() {
 	welcome();
 });
@@ -24,4 +25,6 @@ function welcome() {
 	//alert(diff);
 	content.css("padding-top", diff/2);
 	*/
+	//$('#contact .container').equalize({children: 'p'});
+	$('#contact .container').equalize('innerHeight');
 }

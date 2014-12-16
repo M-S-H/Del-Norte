@@ -92,6 +92,7 @@ section {
 
 #welcome {
 	width: 100%;
+	position: relative;
 	//height: 100%;
 	
 	background: image-url('welcome-bg.jpg') no-repeat center center;
@@ -175,6 +176,22 @@ section {
 		font-size: 16px;
 		text-transform: uppercase;
 	}
+}
+
+
+#arrow-down {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+
+	text-align: center;
+
+	i {
+		font-size: 34px;
+	}
+	text-shadow: 0 0 10px rgba(0,0,0,0.5);
+	
+	color: white;
 }
 
 
@@ -352,6 +369,10 @@ section {
 		font-size: 20px;
 		margin-bottom: 30px;
 		color: $dark;
+	}
+
+	a {
+		color: $light;
 	}
 }
 
