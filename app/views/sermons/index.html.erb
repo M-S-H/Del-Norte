@@ -10,25 +10,32 @@
 					:height => '315',
 					:frameborder => '0', 
 					:controlls => '0',
-					fullscreen: true
+					fullscreen: true,
 			}).html_safe %>
 		</div>
 	</div>
+</div>
 
-	<div id="sermon-list">
-		<div id="sermon-search">
-			<%= text_field_tag "search-sermons", "", placeholder: "Search Sermons" %>
-		</div>
+<div id="current-sermon-name">
+	<b>Now Playing:</b> <%= @sermons[0].title %>
+</div>
+
+<div id="sermon-list">
+
+	<div class="container">
 		<% @sermons.each_with_index do |s| %>
 			<div class="sermon-listing" id="<%= s.unique_id %>">
+				<div class="top-color"><%= image_tag s.thumbnails[2].url %></div>
 				<div class="sermon-thumb">
-					<%= image_tag s.thumbnails[2].url, height: '75px' %>
+					<%= image_tag s.thumbnails[2].url %>
 				</div>
 				<div class="sermon-title"><h4><%= s.title %></h4></div>
 			</div>
 		<% end %>
 	</div>
+
 </div>
+
 
 <%= image_tag "data:image/jpeg;base64,#{@image}", id: "s-bg-image", width: "800px", height: '800px', onload: "initblur()" %>
 <canvas id="sermon-canvas" width="800px" height="800px">

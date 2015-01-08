@@ -1,8 +1,23 @@
+// Fix Video Wrapper Height
+var h = $("#semon-bg").height();
+$("#sermon-bg").height(h);
+
+// Remove Current Sermon
+$('#current-sermon').fadeOut('slow');
+$('#current-sermon').remove();
+
 // Change src of image element
 $("#s-bg-image").attr("src", "data:image/jpeg;base64,<%=j @image %>");
 
 // Replace Video
-// var player = $("<%=j @player %>");
-// var sermon = $("<div id='current-sermon'></div>").hide();
-// sermon.append(player);
-// $("#current-sermon-wrap").append(sermon);
+var player = $("<%=j @player %>");
+var sermon = $("<div id='current-sermon'></div>").hide();
+sermon.append(player);
+$("#current-sermon-wrap").append(sermon);
+$("#current-sermon").fadeIn('slow');
+
+// Change Title
+$("#current-sermon-name").html("<b>Now Playing:</b> <%=j @sermon.title %>");
+
+// Restore Height
+$("#sermon-bg").height("auto");

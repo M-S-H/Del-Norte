@@ -35,7 +35,8 @@ class SermonsController < ApplicationController
 			:height => '315',
 			:frameborder => '0', 
 			:controlls => '0',
-			fullscreen: true
+			fullscreen: true,
+			wmode: 'opaque'
 		}).html_safe
 
 		@id = params[:id]

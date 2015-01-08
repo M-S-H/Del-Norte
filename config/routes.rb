@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
 	get '/change_sermon' => 'sermons#change_sermon'
 
+	get '/calendar' => 'application#calendar'
+
 	# The priority is based upon order of creation: first created -> highest priority.
 	# See how all your routes lay out with "rake routes".
 
