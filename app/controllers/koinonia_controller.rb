@@ -1,0 +1,2 @@
+class KoinoniaController < ApplicationController
+end

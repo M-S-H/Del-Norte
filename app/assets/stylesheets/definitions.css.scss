@@ -68,12 +68,21 @@ p {
 // Form Elements
 //----------------------------------------------------------
 #{$all-text-inputs} {
-
+	padding: 10px 20px;
+	//border: 2px solid $blue;
+	background-color: $light-bg;
+	border: none;
+	color: $blue;
+	-webkit-appearance: none;
 }
 
 
 #{$all-text-inputs-focus} {
+	outline: none;
+}
 
+input[type=submit] {
+	-webkit-appearance: none;
 }
 //----------------------------------------------------------
 
