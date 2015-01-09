@@ -29,6 +29,7 @@ end
 group :production do
 	gem 'unicorn'
 	gem 'unicorn-rails'
+	gem 'mysql2'
 end
 
 
