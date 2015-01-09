@@ -29,3 +29,9 @@ task :restart do
 		execute "service unicorn restart"
 	end
 end
+
+task :seed do
+	on roles(:app) do 
+		execute "rake db:seed"
+	end
+end
