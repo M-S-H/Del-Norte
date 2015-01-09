@@ -27,3 +27,4 @@ production:
   username: rails
   password: mIqWRyk659
   socket: /var/run/mysqld/mysqld.sock
+  host: localhost
