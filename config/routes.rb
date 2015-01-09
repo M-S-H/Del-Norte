@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 	get '/change_sermon' => 'sermons#change_sermon'
 
 	get '/calendar' => 'application#calendar'
+
+	get '/dashboard' => 'admin#dashboard'
 end

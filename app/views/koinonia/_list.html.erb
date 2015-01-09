@@ -1,0 +1,21 @@
+<h1>Koinonia</h1>
+<%= link_to "Create", "/koinonia/new" %>
+
+<table width="100%">
+	<tr>
+		<th>Image</th>
+		<th>Name</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+
+	<% @koinonia.each do |k| %>
+		<tr>
+			<td>Image</td>
+			<td><%= k.name %></td>
+			<td>Edit</td>
+			<td>Delete</td>
+		</tr>
+	<% end %>
+
+</table>
