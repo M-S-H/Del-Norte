@@ -1,0 +1,25 @@
+<section id="koinonia-header">
+	<div class="container">
+		<div id="current-koinonia" class="column-4"><%= image_tag @current.image, height: '100%' %></div>
+		<div id="koinonia-text" class="column-8">
+			<p>Koinonia is a Greek word whose primary meaning is “fellowship or sharing in common.”  It means that we are in agreement with one another, united in a common purpose, and serving alongside each other.  It is the ideal state of fellowship, community and family that should exist within a body of believers.  It is this ideal state, this koinonia, that we hope to encourage through this publication.  Our hope is that it would be far more than just a fancy listing of events, but that people would get a greater sense of who we are as a church, that they would see our heart, not just our hands and feet.</p><br>
+			<%= link_to 'Read Current Issue', @current.pdf %>
+			<%= link_to 'Download Current Issue', @current.download, id: 'koinonia-download-link' %>
+		</div>
+	</div>
+</section>
+
+<section id="koinonia-list">
+	<h2>Past Issues:</h2>
+	<div class="container">
+		<% @koinonia.each do |k| %>
+			<div class="koinonia-listing column-4">
+				<div class="koinonia-image"><%= image_tag k.image, width: '100%' %></div>
+				<h3><%= link_to k.name, k.pdf, target: '_blank' %></h3>
+			</div>
+		<% end %>
+	</div>
+</section>
+
+<%= image_tag @current.image, id: "k-bg-image", width: "800px", height: '800px', onload: "kblur()" %>
+<canvas id="koinonia-canvas" width="800px" height="800px"></canvas>

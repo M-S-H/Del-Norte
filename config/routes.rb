@@ -9,4 +9,8 @@ Rails.application.routes.draw do
 	get '/calendar' => 'application#calendar'
 
 	get '/dashboard' => 'admin#dashboard'
+	get '/dashboard/koinonia' => 'admin#koinonia'
+
+	resources :koinonia, except: [:show]
+	get '/koinonia/download/:id' => 'koinonia#download'
 end

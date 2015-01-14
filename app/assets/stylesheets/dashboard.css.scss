@@ -3,26 +3,28 @@
 	min-height: 100%;
 	padding-top: 100px;
 	padding-bottom: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
 
 	background-color: $light-bg;
 }
 
 
-#dash-links {
-	width: 100%;
+#dashboard {
+	background-color: $dark;
+	padding: 0;
 
-	background-color: white;
-	border-radius: 5px;
 	@include shadow;
+}
+
+
+#dash-links {
+	padding-left: 2.35765%;
 
 	ul {
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
-	}
-
-	li {
-		//border-top: 1px solid #eee;
 	}
 
 	a {
@@ -39,40 +41,17 @@
 	#dash-links-top, #dash-links-bottom {
 		height: 20px;
 	}
-
-	.active-dash {
-		box-shadow: 0 0 5px rgba(0,0,0,0.4);
-		color: white;
-		background-color: $blue;
-		position: relative;
-
-		&:hover {background-color: $blue;}
-	}
-
-	.active-dash:after, .active-dash:before {
-		left: 100%;
-		top: 50%;
-		border: solid transparent;
-		content: " ";
-		height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;
-	}
-
-	.active-dash:after {
-		border-color: rgba(0, 0, 0, 0);
-		border-left-color: $blue;
-		border-width: 10px;
-		margin-top: -10px;
-	}
 }
 
 
 #dash-content {
-	height: 600px;
+	min-height: 300px;
+	padding: 20px;
 
 	background-color: white;
-	border-radius: 5px;
-	@include shadow;
+
+	h1 {
+		color: $dark;
+		text-transform: uppercase;
+	}
 }

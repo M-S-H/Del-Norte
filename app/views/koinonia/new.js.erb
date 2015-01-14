@@ -1,0 +1,3 @@
+var content = $("<%=j render 'form', locals: {link: @link, koinonia: @koinonia} %>").hide();
+$("#new-koinonia").append(content);
+content.slideDown();

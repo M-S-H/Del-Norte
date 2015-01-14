@@ -1,0 +1,15 @@
+<%= content_for :dash do %>
+	<h1>Koinonia</h1>
+	<%= link_to raw('<i class="fa fa-plus-circle"></i> Create New'), "/koinonia/new", id: 'new-koinonia-link', remote: :true %>
+	<div id="new-koinonia"></div>
+
+	<% @koinonia.each do |k| %>
+		<div class="k-entry" id="<%= k.id %>">
+			<div class="k-entry-image"><%= image_tag k.image, width: '120px' %></div>
+			<div class="k-entry-destroy"><%= link_to 'Delete', k, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+			<div class="k-entry-edit"><%= link_to 'Edit', edit_koinonium_path(k), remote: true %></div>
+			<div class="k-entry-name"><%= k.name %></div>
+			<div class="float-clear"></div>
+		</div>
+	<% end %>
+<% end %>

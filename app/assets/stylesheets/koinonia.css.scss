@@ -1,3 +1,209 @@
-// Place all the styles related to the Koinonia controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#koinonia-header {
+	width: 100%;
+	margin-top: 80px;
+	padding: 20px;
+
+	@media(min-width: 769px) {
+		height: 340px;
+	}
+
+	@media(max-width: 769px) {
+		margin-top: 60px;
+	}
+
+	background-position: 50% 50%;
+	background-repeat: no-repeat no-repeat;
+	background-size: cover;
+}
+
+
+#current-koinonia {
+	height: 300px;
+
+	@media(max-width: 769px) {
+		height: 200px;
+	}
+
+	img {
+		display: block;
+		margin: auto;
+		@include shadow;
+	}
+}
+
+
+#koinonia-text {
+	@media(min-width: 769px) {
+		height: 300px;
+	}
+
+	p {
+		color: white;
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+		@media(max-width: 769px) {
+			display: none;
+		}
+	}
+
+	a {
+		@media(max-width: 769px) {
+			display: block;
+			margin: auto;
+			margin-top: 20px;
+			text-align: center;
+			width: 80%;
+		}
+
+		@include squarebuttonfilled(white);
+		font-size: 12px;
+	}
+
+	#koinonia-download-link {
+		@media(max-width: 769px) {
+			display: none;
+		}
+	}
+}
+
+
+#koinonia-list {
+	padding-top: 20px;
+	background-color: $light-bg;
+
+	h2 {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 24px;
+		color: $dark;
+		font-family: $thin-font;
+		font-weight: 100;
+	}
+}
+
+
+.koinonia-listing {
+	margin-top: 20px;
+
+	.koinonia-image {
+		height: 250px;
+		margin: auto;
+		background-color: grey;
+		overflow: hidden;
+		border-radius: 5px 5px 0 0;
+
+		@media(max-width: 769px) {
+			height: 180px;
+		}
+	}
+
+	h3 {
+		margin-top: 10px;
+		text-align: center;
+
+		a {
+			text-transform: uppercase;
+			font-size: 14px;
+			color: #999;
+
+			&:hover {color: $blue;}
+		}
+
+	}
+
+	@media(min-width: 769px) {
+		@include span-columns(4);
+		@include omega(3n);
+	}
+
+	@media(max-width: 769px) {
+		@include span-columns(6);
+		@include omega(2n);
+	}
+
+	
+	@include card;
+}
+
+
+#koinonia-canvas,
+#k-bg-image {
+	display: none;
+}
+
+
+.k-entry {
+	border-top: 1px solid #eee;
+	padding: 10px 0;
+	clear: both;
+
+	.k-entry-image {
+		width: 60px;
+		height: 60px;
+		float: left;
+		margin-right: 20px;
+
+		overflow: hidden;
+		border-radius: 30px;
+
+		img {
+			margin-left: -30px;
+			margin-top: -47.5px;
+		}
+	}
+
+	.k-entry-name,
+	.k-entry-edit,
+	.k-entry-destroy {
+		float: right;
+		width: 25%;
+		padding-top: 20px;
+		text-align: center;
+	}
+
+
+	.k-entry-name {
+		text-transform: uppercase;
+		font-size: 16px;
+		color: $dark;
+		text-align: left;
+	}
+
+	a {
+		color: $blue;
+		&:hover {opacity: 0.5;}
+	}
+}
+
+
+#new-koinonia-link {
+	margin-bottom: 10px;
+	display: block;
+
+	font-size: 14px;
+	color: $blue;
+	text-transform: uppercase;
+
+	&:hover {opacity: 0.5;}
+}
+
+
+#new-koinonia form,
+.k-entry form {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding: 20px;
+	background-color: $blue;
+	color: white;
+
+	#koinonium_name {
+		margin-bottom: 20px;
+	}
+
+	#new-koinonia-submit {
+		margin-top: 20px;
+		@include squarebutton(white);
+		background-color: $blue;
+		cursor: pointer;
+	}
+}

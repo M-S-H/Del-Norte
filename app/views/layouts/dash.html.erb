@@ -1,0 +1,23 @@
+<%= render template: "layouts/application" %>	
+
+<div id="dash-wrap">
+
+	<div class="container" id="dashboard">
+		
+		<div id="dash-links" class="column-3">
+			<div id="dash-links-top"></div>
+			<ul>
+				<li><%= link_to 'Analytics', '' %></li>
+				<li><%= link_to 'Koinonia', '/dashboard/koinonia' %></li>
+				<li><%= link_to 'Staff', '' %></li>
+				<li><%= link_to 'Alert', '' %></li>
+			</ul>
+			<div id="dash-links-bottom"></div>
+		</div>
+		
+
+		<section id="dash-content" class="column-9">
+			<%= yield :dash %>
+		</section>
+	</div>
+</div>

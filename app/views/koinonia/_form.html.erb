@@ -1,0 +1,10 @@
+<%= form_for @koinonia, multipart: true do |f| %>
+
+	<%= f.text_field :name, placeholder: 'Name' %><br>
+	<lable>PDF:</lable>
+	<%= f.file_field :pdf %>
+	<lable>COVER:</lable>
+	<%= f.file_field :image %><br>
+	<%= submit_tag "Submit", id: "new-koinonia-submit" %>
+	
+<% end %>

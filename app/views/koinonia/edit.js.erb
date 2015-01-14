@@ -1,0 +1,3 @@
+var content = $("<%=j render 'form', locals: {link: @link, koinonia: @koinonia} %>").hide();
+$("#<%= @koinonia.id %>").append(content);
+content.slideDown();
