@@ -6,4 +6,9 @@ class ApplicationController < ActionController::Base
 		#headers['Access-Control-Allow-Origin'] = 'http://localhost:8081/' 
 		headers['Access-Control-Request-Method'] = '*' 
 	end
+
+	def index
+		@alert = Alert.first
+	end
+
 end

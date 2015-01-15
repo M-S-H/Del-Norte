@@ -7,8 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Admin.destroy_all
-
 Admin.create(
 	email: 'website@dnbc.org',
 	password: 'LifeTogether'
+)
+
+Alert.destroy_all
+Alert.create(
+	name: 'Sunday, Febuary 15',
+	description: 'Because of something the schedule for will be different',
+	active: false
 )

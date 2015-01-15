@@ -238,6 +238,24 @@ section {
 }
 
 
+#alert {
+	padding: 20px;
+	background-color: $blue;
+	color: white;
+	text-align: center;
+
+	i {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+
+	p {
+		color: white;
+	}
+}
+
+
+
 #ministries {
 	width: 100%;
 	min-height: 350px;

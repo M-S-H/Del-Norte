@@ -1,0 +1,15 @@
+<%= content_for :dash do %>
+	<h1>Alert</h1>
+
+	
+
+	<%= form_tag "/dashboard/update_alert", id: 'alert-form', remote: true do %>
+		<label class="label-switch">
+			<%= check_box_tag "active", 1, @alert.active %>
+			<div class="checkbox"></div>
+		</label><br>
+
+		<%= text_field_tag :name, @alert.name, placeholder: 'Alert Title', disabled: @alert.active %><br>
+		<%= text_area_tag :description, @alert.description, placeholder: 'Alert Text', disabled: @alert.active %>
+	<% end %>
+<% end %>

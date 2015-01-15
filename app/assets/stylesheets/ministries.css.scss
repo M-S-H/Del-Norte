@@ -1,0 +1,65 @@
+#ministries-heading {
+	margin-top: 80px;
+	height: 300px;
+
+	text-align: center;
+	background: image-url('ministries_heading.jpg') no-repeat center center;
+	background-size: cover;
+
+	h2 {
+		font-size: 24px;
+		@include media(769px) {
+			font-size: 48px;
+		}
+		text-transform: uppercase;
+		letter-spacing: 10px;
+		color: white;
+	}
+
+	p {
+		margin-bottom: 30px;
+	}
+
+	@include media(769px) {
+		background-attachment: fixed;
+		background-position-y: -300px;
+		padding-top: 40px;
+	}
+
+	@media(max-width: 769px) {
+		margin-top: 60px;
+		padding-top: 100px;
+	}
+
+	.container {
+		height: 300px;
+	}
+}
+
+
+.ministry {
+	text-align: center;
+
+	h2 {
+		text-transform: uppercase;
+		font-size: 16px;
+		color: $dark;
+	}
+
+	img {
+		margin-bottom: 20px;
+	}
+
+	@media(min-width: 769px) {
+		@include span-columns(4);
+		@include omega(3n);
+		padding: 10px;
+	}
+
+	@media(max-width: 769px) {
+		margin-top: 80px;
+	}
+
+	margin-bottom: 20px;
+	margin-top: 20px;
+}

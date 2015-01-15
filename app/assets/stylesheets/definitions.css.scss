@@ -67,19 +67,32 @@ p {
 
 // Form Elements
 //----------------------------------------------------------
-#{$all-text-inputs} {
+#{$all-text-inputs}, 
+textarea {
 	padding: 10px 20px;
 	//border: 2px solid $blue;
 	background-color: $light-bg;
 	border: none;
 	color: $blue;
 	-webkit-appearance: none;
+
+	&[disabled=disabled] {
+		opacity: 0.3;
+		color: #999;
+	}
 }
 
 
-#{$all-text-inputs-focus} {
+#{$all-text-inputs-focus},
+textarea {
 	outline: none;
 }
+
+
+textarea {
+	resize: none;
+}
+
 
 input[type=submit] {
 	-webkit-appearance: none;
@@ -157,7 +170,7 @@ a {
 }
 
 
-@for $i from 3 through 12 {
+@for $i from 1 through 11 {
 	.column-#{$i} {
 		@include media(769px) {
 			@include span-columns($i);

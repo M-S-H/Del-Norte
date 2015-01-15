@@ -42,6 +42,18 @@
 	</div>
 </section>
 
+
+<% if @alert.active %>
+	<section id="alert">
+		<div class="container">
+			<i class="fa fa-exclamation-triangle"></i><br>
+			<b><%= @alert.name %></b>
+			<p><%= @alert.description %></p>
+		</div>
+	</section>
+<% end %>
+
+
 <section id="ministries">
 	<h2>Get Involved</h2><p>There are so many things to be a part of at DNBC. We would love for you to come and join us as we serve, worship, fellowship and live life together.</p>
 	<%= link_to "Learn More" %>
