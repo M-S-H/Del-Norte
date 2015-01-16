@@ -1,11 +1,11 @@
 # Define roles, user and IP address of deployment server
 # role :name, %{[user]@[IP adde.]}
-role :app, %w{root@107.170.238.132}
-role :web, %w{root@107.170.238.132}
-role :db,  %w{root@107.170.238.132}
+role :app, %w{root@107.170.197.50}
+role :web, %w{root@107.170.197.50}
+role :db,  %w{root@107.170.197.50}
 
 # Define server(s)
-server '107.170.238.132', user: 'root', roles: %w{web}
+server '107.170.197.50', user: 'root', roles: %w{web}
 
 # SSH Options
 # See the example commented out section in the file

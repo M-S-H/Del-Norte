@@ -25,6 +25,6 @@ production:
   encoding: utf8
   database: rails
   username: rails
-  password: mIqWRyk659
+  password: pnxzMQ1AYE
   socket: /var/run/mysqld/mysqld.sock
   host: localhost

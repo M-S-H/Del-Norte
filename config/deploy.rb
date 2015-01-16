@@ -22,16 +22,20 @@ set :pty, true
 
 set :format, :pretty
 
-set :rails_env, :production
-
 task :restart do
 	on roles(:app) do
 		execute "service unicorn restart"
 	end
 end
 
+task :migrate do 
+	on roles(:app) do 
+		execute "rake db:migrate"
+	end
+end
+
 task :seed do
 	on roles(:app) do 
-		execute "rake db:seed"
+		execute "rake db:seed RAILS_ENV=production"
 	end
 end
