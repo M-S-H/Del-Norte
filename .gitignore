@@ -21,3 +21,7 @@
 
 # Google Key
 /key
+
+# Ignore deploy files
+/config/deploy.rb
+/config/deploy
