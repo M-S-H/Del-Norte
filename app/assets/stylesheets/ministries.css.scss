@@ -1,6 +1,5 @@
 #ministries-heading {
 	margin-top: 80px;
-	height: 300px;
 
 	text-align: center;
 	background: image-url('ministries_heading.jpg') no-repeat center center;
@@ -17,22 +16,22 @@
 	}
 
 	p {
-		margin-bottom: 30px;
+		color: white;
+		font-size: 16px;
 	}
 
 	@include media(769px) {
 		background-attachment: fixed;
 		background-position-y: -300px;
-		padding-top: 40px;
 	}
 
 	@media(max-width: 769px) {
 		margin-top: 60px;
-		padding-top: 100px;
 	}
 
 	.container {
-		height: 300px;
+		padding-top: 70px;
+		padding-bottom: 70px;
 	}
 }
 
