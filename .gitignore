@@ -13,7 +13,8 @@
 
 # Assets
 /public/assets
-/public/koinonia/
+/public/shared
+/public/koinonia
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
