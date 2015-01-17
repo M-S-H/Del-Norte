@@ -13,7 +13,6 @@
 
 # Assets
 /public/assets
-/public/shared
 /public/koinonia
 
 # Ignore all logfiles and tempfiles.
