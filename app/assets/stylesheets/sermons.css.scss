@@ -135,9 +135,13 @@
 	}
 
 	@media (max-width: 769px) {
-		height: 70px;
-		margin: 5px 10px;
+		height: 160px;
+		padding: 10px;
+		//margin: 5px 10px;
 		box-shadow: 0 0 2px rgba(0,0,0,0.1);
+		text-align: center;
+		@include span-columns(6);
+		@include omega(2n);
 	}
 
 	&:hover {
@@ -174,10 +178,8 @@
 		@media (max-width: 769px) {
 			width: 50px;
 			height: 50px;
-			margin-left: 10px;
-			margin-right: 10px;
+			margin: auto;
 			margin-top: 10px;
-			float: left;
 			border-radius: 25px;
 
 			img {
@@ -222,10 +224,10 @@
 		}
 
 		@media (max-width: 769px) {
-			width: 280px;
+			//width: 280px;
+			text-align: center;
 			padding: 0;
 			margin-top: 20px;
-			margin-left: 20px;
 			float: left;
 			font-size: 12px;
 		}

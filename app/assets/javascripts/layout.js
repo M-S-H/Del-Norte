@@ -1,10 +1,14 @@
 $(document).ready(function() {
 	welcome();
+
+	$('#learn-more').click(function() {
+		$("#welcome-msg").ScrollTo();
+	})
 });
 
 
 $(window).on("orientationchange", function() {
-	//welcome();
+
 });
 
 
@@ -19,3 +23,5 @@ function welcome() {
 	
 	$('#contact .container').equalize('innerHeight');
 }
+
+
