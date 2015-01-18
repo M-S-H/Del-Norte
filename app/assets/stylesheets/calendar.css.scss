@@ -1,0 +1,73 @@
+#calendar-heading {
+	margin-top: 80px;
+
+	text-align: center;
+	background: image-url('calendar.jpg') no-repeat center center;
+	background-size: cover;
+
+	h2 {
+		font-size: 24px;
+		@include media(769px) {
+			font-size: 48px;
+		}
+		text-transform: uppercase;
+		letter-spacing: 10px;
+		color: white;
+	}
+
+	p {
+		color: white;
+		font-size: 16px;
+	}
+
+	@include media(769px) {
+		background-attachment: fixed;
+		background-position-y: -300px;
+	}
+
+	@media(max-width: 769px) {
+		margin-top: 60px;
+	}
+
+	.container {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+
+
+#calendars {
+	padding-top: 50px;
+	background-color: $light-bg;
+
+	div:first {
+		border-left: 1px solid #444;
+	}
+	
+	div {
+		text-align: center;
+
+		@media(max-width: 769px) {
+			margin-top: 30px;
+		}
+
+		h2 {
+			text-transform: uppercase;
+		}
+
+		a {
+			display: inline-block;
+			margin-bottom: 30px;
+			@include squarebutton($blue);
+			&:hover {
+				color: white;
+			}
+		}
+	}
+}
+
+
+#upcoming-events {
+	margin-top: 40px;
+	text-align: center;
+}

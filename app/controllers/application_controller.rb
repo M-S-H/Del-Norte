@@ -11,4 +11,20 @@ class ApplicationController < ActionController::Base
 		@alert = Alert.first
 	end
 
+	def download_jan
+		send_file(
+			"public/January2015.pdf",
+			filename: "January2015.pdf",
+			type: "application/pdf"
+		)
+	end
+
+	def download_feb
+		send_file(
+			"public/Feburary2015.pdf",
+			filename: "Feburary2015.pdf",
+			type: "application/pdf"
+		)
+	end
+
 end

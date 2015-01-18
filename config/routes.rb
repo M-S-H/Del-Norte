@@ -17,4 +17,7 @@ Rails.application.routes.draw do
 	get '/koinonia/download/:id' => 'koinonia#download'
 
 	get '/ministries' => 'ministries#index'
+
+	get '/download_jan' => 'application#download_jan'
+	get '/download_feb' => 'application#download_feb'
 end

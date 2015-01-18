@@ -1,6 +1,6 @@
 class KoinoniaController < ApplicationController
-	before_action :authenticate_admin!, except: [:index]
-	layout 'dash', except: [:index]
+	before_action :authenticate_admin!, except: [:index, :download]
+	layout 'dash', except: [:index, :download]
 
 	def index
 		@koinonia = Koinonium.all.reverse
