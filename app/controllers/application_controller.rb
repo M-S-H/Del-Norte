@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 	def download_feb
 		send_file(
 			"public/Feburary2015.pdf",
-			filename: "Feburary2015.pdf",
+			filename: "February2015.pdf",
 			type: "application/pdf"
 		)
 	end
