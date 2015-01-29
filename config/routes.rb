@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :calendars
+
 	root 'application#index'
 
 	devise_for :admins, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
@@ -6,10 +8,12 @@ Rails.application.routes.draw do
 	resources :sermons
 	get '/change_sermon' => 'sermons#change_sermon'
 
-	get '/calendar' => 'application#calendar'
+	#get '/calendar' => 'application#calendar'
+	resources :calendars, except: [:show, :create, :new]
 
 	get '/dashboard' => 'admin#dashboard'
 	get '/dashboard/koinonia' => 'admin#koinonia'
+	get '/dashboard/calendars' => 'admin#calendars'
 	get '/dashboard/alert' => 'admin#alert'
 	post '/dashboard/update_alert' => 'admin#update_alert'
 

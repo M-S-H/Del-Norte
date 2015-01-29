@@ -1,0 +1,158 @@
+#calendar-heading {
+	margin-top: 80px;
+
+	text-align: center;
+	background: image-url('calendar.jpg') no-repeat center center;
+	background-size: cover;
+
+	h2 {
+		font-size: 24px;
+		@include media(769px) {
+			font-size: 48px;
+		}
+		text-transform: uppercase;
+		letter-spacing: 10px;
+		color: white;
+	}
+
+	p {
+		color: white;
+		font-size: 16px;
+	}
+
+	@include media(769px) {
+		background-attachment: fixed;
+		background-position-y: -300px;
+	}
+
+	@media(max-width: 769px) {
+		margin-top: 60px;
+	}
+
+	.container {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+
+
+#calendars {
+	padding-top: 50px;
+	padding-bottom: 20px;
+	background-color: $light-bg;
+
+	div:first {
+		border-left: 1px solid #444;
+	}
+	
+	div {
+		text-align: center;
+
+		@media(max-width: 769px) {
+			margin-top: 30px;
+		}
+
+		h2 {
+			text-transform: uppercase;
+		}
+
+		a {
+			display: inline-block;
+			margin-bottom: 30px;
+			@include squarebutton($blue);
+			&:hover {
+				color: white;
+			}
+		}
+	}
+}
+
+
+#upcoming-events {
+	margin-top: 40px;
+	text-align: center;
+}
+
+
+#manage-calendars {
+	border-collapse: collapse;
+
+	th {
+		padding: 10px 0px;
+
+		text-align: left;
+		color: $dark;
+		font-size: 14px;
+		border-bottom: 1px solid #eee;
+	}
+
+	td {
+		padding: 10px 0px;
+		
+		color: #8c9398;
+		font-size: 14px;
+
+		b {
+			color: $blue;
+		}
+	}
+
+	a {
+		color: $blue;
+		&:hover {opacity: 0.5;}
+	}
+}
+
+
+#calendar-form {
+	width: 400px;
+	//height: 200px;
+	padding: 20px;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	margin-left: -200px;
+	z-index: 200;
+
+	background-color: white;
+	border-radius: 5px;
+	@include shadow;
+
+	h1 {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 16px;
+	}
+
+	#calendar_pdf,
+	.actions {
+		display: none;
+	}
+
+	#select-calendar {
+		margin: auto;
+		width: 60%;
+		
+		@include roundbutton($blue);
+		cursor: pointer;
+		text-align: center;
+	}
+
+	.bar-bg {
+		height: 20px;
+		width: 100%;
+		margin-top: 20px;
+		
+		background-color: $light-bg;
+		border-radius: 3px;
+		box-shadow: inset 1px 1px 1px #ccc;
+	}
+
+	.bar {
+		height: 20px;
+		margin-top: -20px;
+
+		background-color: $blue;
+		border-radius: 3px;
+	}
+}

@@ -1,0 +1,17 @@
+<div id="calendar-form">
+	<h1><%= @calendar.name %></h1>
+	<%= form_for(@calendar) do |f| %>
+		<%= f.file_field 'pdf' %>
+
+		<div id="select-calendar">Select File</div>
+
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+
+	<div id="progress">
+		<div class="bar-bg"></div>
+		<div class="bar" style="width: 0%;"></div>
+	</div>
+</div>

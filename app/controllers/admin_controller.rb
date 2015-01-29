@@ -11,6 +11,11 @@ class AdminController < ApplicationController
 		@koinonia = Koinonium.all.reverse
 	end
 
+	def calendars
+		@calendars = Calendar.all
+		@c = Calendar.find 1
+	end
+
 	def alert
 		@alert = Alert.first
 	end

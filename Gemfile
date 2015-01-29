@@ -39,3 +39,4 @@ gem 'neat'
 gem 'youtube_it'
 
 gem 'devise'
+gem "jquery-fileupload-rails"

@@ -1,0 +1,18 @@
+var content = $("<%=j render 'form', locals: {calendar: @calendar} %>").hide();
+$('body').append(content);
+$('body').append('<div id="screen"></div>');
+content.fadeIn();
+
+$(function() {
+	$('.edit_calendar').fileupload({
+		dataType: 'script',
+
+		progressall: function (e, data) {
+			var progress = parseInt(data.loaded / data.total * 100, 10);
+			$('#progress .bar').css(
+				'width',
+				progress + '%'
+			);
+		}
+	});
+});

@@ -1,0 +1,22 @@
+<%= content_for :dash do %>
+	<h1>Calendars</h1>
+
+	<table width="100%" id="manage-calendars">
+		<tr>
+			<th>Month</th>
+			<th>Current File</th>
+			<th>Last Updated</th>
+			<th>Upload New</th>
+		</tr>
+		<% @calendars.each do |c| %>
+			<tr id="<%= c.id %>">
+				<td><b><%= c.name %><b></td>
+				<td><%= link_to c.pdf, c.pdf_url %></td>
+				<td><%= c.updated_at.to_date %></td>
+				<td><%= link_to 'Upload New', edit_calendar_path(c), remote: true %></td>
+			</tr>
+		<% end %>
+	</table>
+
+
+<% end %>
