@@ -10,6 +10,20 @@
 	<div class="container">
 		<div class="column-6" id="current-calendar">
 			<h4 class="underline">Current Month</h4>
+			<h2><%= "#{@current.name} #{Time.now.in_time_zone('America/Denver').year}" %></h2>
+			<%= link_to 'View Calendar', @current.pdf_url, target: "_blank" %><br>
+			<%= link_to 'Download Calendar', "/calendar/#{@current.id}/download" %>
+		</div>
+
+		<div class="column-6" id="next-calendar">
+			<h4 class="underline">Current Month</h4>
+			<h2><%= "#{@next.name} #{Time.now.in_time_zone('America/Denver').year}" %></h2>
+			<%= link_to 'View Calendar', @next.pdf_url, target: "_blank" %><br>
+			<%= link_to 'Download Calendar', "/calendar/#{@next.id}/download" %>
+		</div>
+		<!--
+		<div class="column-6" id="current-calendar">
+			<h4 class="underline">Current Month</h4>
 			<h2>January 2015</h2>
 			<%= link_to 'View Calendar', "January2015.pdf", target: "_blank" %><br>
 			<%= link_to 'Download Calendar', "/download_jan" %>
@@ -21,6 +35,7 @@
 			<%= link_to 'View Calendar', "February2015.pdf", target: "_blank" %><br>
 			<%= link_to 'Download Calendar', "/download_feb" %>
 		</div>
+		-->
 	</div>
 </section>
 

@@ -12,7 +12,7 @@
 			<tr id="<%= c.id %>">
 				<td><b><%= c.name %><b></td>
 				<td><%= link_to c.pdf, c.pdf_url %></td>
-				<td><%= c.updated_at.to_date %></td>
+				<td><%= c.updated_at.in_time_zone("America/Denver").strftime("%m-%d-%Y") %></td>
 				<td><%= link_to 'Upload New', edit_calendar_path(c), remote: true %></td>
 			</tr>
 		<% end %>

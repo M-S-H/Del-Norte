@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
 	#get '/calendar' => 'application#calendar'
 	resources :calendars, except: [:show, :create, :new]
+	get '/calendar/:id/download' => 'calendars#download'
 
 	get '/dashboard' => 'admin#dashboard'
 	get '/dashboard/koinonia' => 'admin#koinonia'

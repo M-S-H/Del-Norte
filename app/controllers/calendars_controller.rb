@@ -1,13 +1,19 @@
 class CalendarsController < ApplicationController
-	before_action :set_calendar, only: [:show, :edit, :update, :destroy]
+	before_action :set_calendar, only: [:show, :edit, :update, :destroy, :download]
 	before_action :authenticate_admin!, except: [:index, :download]
 	layout 'dash', except: [:index, :download]
 
 	respond_to :html
 
 	def index
-		@calendars = Calendar.all
-		respond_with(@calendars)
+		cm = Time.now.in_time_zone("America/Denver").month
+		nm = cm + 1
+		if nm == 13
+			nm = 1
+		end
+
+		@current = Calendar.find {|x| x.month == cm}
+		@next = Calendar.find {|x| x.month == nm}
 	end
 
 
@@ -55,6 +61,11 @@ class CalendarsController < ApplicationController
 
 
 	def download
+		send_file(
+			@calendar.pdf_location,
+			filename: "#{@calendar.name}.pdf",
+			type: "application/pdf"
+		)
 	end
 
 
