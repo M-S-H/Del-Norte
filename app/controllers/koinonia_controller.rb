@@ -37,27 +37,10 @@ class KoinoniaController < ApplicationController
 	def create
 		@koinonia = Koinonium.create name: params[:koinonium][:name]
 
-		pdf = params[:koinonium][:pdf]
-		image = params[:koinonium][:image]
-
-		File.open(@koinonia.pdf_url, "wb") do |file|
-			file.write pdf.read
+		if params[:files]
+			pdf = params[:files].find {|f| f.original_filename =~ /.pdf/}
+			image = params[:files].find {|f| f.original_filename =~ /(.png|.jpg)/}
 		end
-
-		File.open(@koinonia.image_url, "wb") do |file|
-			file.write image.read
-		end
-
-		redirect_to "/dashboard/koinonia"
-	end
-
-
-	def update
-		@koinonia = Koinonium.find params[:id]
-		@koinonia.update name: params[:koinonium][:name]
-
-		pdf = params[:koinonium][:pdf]
-		image = params[:koinonium][:image]
 
 		if pdf
 			File.open(@koinonia.pdf_url, "wb") do |file|
@@ -66,13 +49,38 @@ class KoinoniaController < ApplicationController
 		end
 
 		if image
-			puts "IMAGE!!!!"
 			File.open(@koinonia.image_url, "wb") do |file|
 				file.write image.read
 			end
 		end
 
-		redirect_to "/dashboard/koinonia"
+		#redirect_to "/dashboard/koinonia"
+	end
+
+
+	def update
+		@koinonia = Koinonium.find params[:id]
+
+		@koinonia.update name: params[:koinonium][:name]
+
+		if params[:files]
+			pdf = params[:files].find {|f| f.original_filename =~ /.pdf/}
+			image = params[:files].find {|f| f.original_filename =~ /(.png|.jpg)/}
+		end
+
+		if pdf
+			File.open(@koinonia.pdf_url, "wb") do |file|
+				file.write pdf.read
+			end
+		end
+
+		if image
+			File.open(@koinonia.image_url, "wb") do |file|
+				file.write image.read
+			end
+		end
+
+		#redirect_to "/dashboard/koinonia"
 	end
 
 

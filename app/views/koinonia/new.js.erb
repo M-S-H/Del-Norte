@@ -1,3 +1,77 @@
-var content = $("<%=j render 'form', locals: {link: @link, koinonia: @koinonia} %>").hide();
-$("#new-koinonia").append(content);
-content.slideDown();
+var content = $("<%=j render 'form', locals: {koinonia: @koinonia} %>").hide();
+$('body').append(content);
+$('body').append('<div id="screen"></div>');
+content.fadeIn();
+
+
+
+var filelist = [];
+pdf_index = null;
+image_index = null;
+
+
+$('.new_koinonium').fileupload({
+		dataType: 'script',
+		autoupload: false,
+		singleFileUploads: false,
+
+		add: function(e, data) {
+			if (e.currentTarget.id == "koinonium_pdf") {
+
+				// Get name and type of the file
+				name = data.files[0].name;
+				type = name.split(".").pop();
+
+				// Validate file type
+				if (type != "pdf")
+					alert("Must be a pdf");
+				else {
+					// Indicate which file is selected
+					$('#select-koinonia span').html(name);
+
+					// Determine indicies in filelist array
+					if (pdf_index == null) {
+						pdf_index = 0;
+						image_index = 1;
+					}
+
+					// Add the file to filelist
+					filelist[pdf_index] = data.files[0];
+				}
+
+			}
+			else if (e.currentTarget.id == "koinonium_image") {
+				
+				// Get name of the file
+				name = data.files[0].name;
+				type = name.split(".").pop();
+
+				// Validate file type
+				if (type != "jpg" && type != "png")
+					alert("Must be a jpg or png");
+				else {
+					// Indicate which file is selected
+					$('#select-cover span').html(name);
+
+					// Determine indicies in filelist array
+					if (pdf_index == null) {
+						pdf_index = 1;
+						image_index = 0;
+					}
+
+					// Add the file to filelist
+					filelist[image_index] = data.files[0];
+				}
+			}
+
+
+		},
+
+		progressall: function (e, data) {
+			var progress = parseInt(data.loaded / data.total * 100, 10);
+			$('#progress .bar').css(
+				'width',
+				progress + '%'
+			);
+		}
+	});

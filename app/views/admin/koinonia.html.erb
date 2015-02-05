@@ -3,6 +3,7 @@
 	<%= link_to raw('<i class="fa fa-plus-circle"></i> Create New'), "/koinonia/new", id: 'new-koinonia-link', remote: :true %>
 	<div id="new-koinonia"></div>
 
+	<div id="k-entries">
 	<% @koinonia.each do |k| %>
 		<div class="k-entry" id="<%= k.id %>">
 			<div class="k-entry-image"><%= image_tag k.image, width: '120px' %></div>
@@ -12,4 +13,5 @@
 			<div class="float-clear"></div>
 		</div>
 	<% end %>
+	</div>
 <% end %>

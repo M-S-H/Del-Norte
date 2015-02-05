@@ -1,0 +1,7 @@
+<div class="k-entry" id="<%= @koinonia.id %>">
+	<div class="k-entry-image"><%= image_tag @koinonia.image, width: '120px' %></div>
+	<div class="k-entry-destroy"><%= link_to 'Delete', @koinonia, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+	<div class="k-entry-edit"><%= link_to 'Edit', edit_koinonium_path(@koinonia), remote: true %></div>
+	<div class="k-entry-name"><%= @koinonia.name %></div>
+	<div class="float-clear"></div>
+</div>

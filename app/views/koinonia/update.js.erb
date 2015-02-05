@@ -1,0 +1,6 @@
+$("#koinonia-form").fadeOut();
+$("#screen").fadeOut();
+
+var entry = $("#<%= @koinonia.id %>");
+var content = $("<%=j render 'entry', locals: {koinonia: @koinonia} %>");
+entry.replaceWith(content);

@@ -1,10 +1,24 @@
-<%= form_for @koinonia, multipart: true do |f| %>
+<div id="koinonia-form">
+	<%= form_for @koinonia, multipart: true, remote: true do |f| %>
+		<h1>
+			<%= @koinonia.id == nil ? "New Koinonia" : @koinonia.name %>
+		</h1>
 
-	<%= f.text_field :name, placeholder: 'Name' %><br>
-	<lable>PDF:</lable>
-	<%= f.file_field :pdf %>
-	<lable>COVER:</lable>
-	<%= f.file_field :image %><br>
-	<%= submit_tag "Submit", id: "new-koinonia-submit" %>
-	
-<% end %>
+		<%= f.text_field :name, placeholder: 'Name' %><br>
+		
+		<div id="select-koinonia">Select Article <span>None Selected</span></div>
+		<div id="select-cover">Select Cover <span>None Selected</span></div>
+
+		<input type="file" name="files[]" id="koinonium_files" multiple/>
+		<%= f.file_field :image %>
+		<%= f.file_field :pdf %>
+
+		<div id="k-<%= @koinonia.id == nil ? 'create' : 'edit' %>"><%= @koinonia.id == nil ? "Create" : "Save" %></div>
+		
+	<% end %>
+
+	<div id="progress">
+		<div class="bar-bg"></div>
+		<div class="bar" style="width: 0%;"></div>
+	</div>
+</div>
