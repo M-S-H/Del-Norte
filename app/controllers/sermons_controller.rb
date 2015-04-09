@@ -4,7 +4,7 @@ class SermonsController < ApplicationController
 	# GET /sermons
 	# GET /sermons.json
 	def index
-		@sermons = VIDEO_CLIENT.playlist("PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ").videos
+		@sermons = VIDEO_CLIENT.playlist("PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ").videos[0..11]
 		thumbs = @sermons.first.thumbnails
 		max = 0
 		@image = ""
@@ -14,12 +14,6 @@ class SermonsController < ApplicationController
 		else
 			@image = thumbs.first
 		end
-
-		# thumbs.each do |t|
-		# 	if t.width > max
-		# 		@image = t.url
-		# 	end
-		# end
 
 		@image = Base64.encode64(open(@image).read)
 	end
