@@ -255,6 +255,53 @@ section {
 }
 
 
+#vbs {
+	width: 100%;
+	padding: 100px;
+	background: image-url('vbs_bg.jpg') no-repeat center center;
+	background-size: cover;
+
+	@include media(769px) {
+		background-attachment: fixed;
+	}
+
+	position: center;
+	text-align: center;
+	color: white;
+
+	img {
+		margin-bottom: 20px;
+	}
+
+	h2 {
+		font-size: 24px;
+		@include media(769px) {
+			font-size: 48px;
+		}
+		text-transform: uppercase;
+		letter-spacing: 10px;
+	}
+
+	p {
+		color: white;
+		margin-bottom: 30px;
+	}
+
+	a {
+		margin-top: 20px;
+		padding: 10px 40px;
+
+		color: white;
+		text-transform: uppercase;
+		border: 1px solid white;
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}
+
+
 
 #ministries {
 	width: 100%;
