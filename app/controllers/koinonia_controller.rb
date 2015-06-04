@@ -4,11 +4,11 @@ class KoinoniaController < ApplicationController
 
 	def index
 		@koinonia = Koinonium.all.reverse
-		@koinonia.each do |x|
-			puts x.name
-		end
+		# @koinonia.each do |x|
+		# 	puts x.name
+		# end
 		@current = @koinonia.delete_at 0
-		puts @current.name
+		# puts @current.name
 	end
 
 
