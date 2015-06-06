@@ -18,6 +18,9 @@ gem 'sdoc', '~> 0.4.0',				group: :doc
 group :development do 
 	gem 'spring'
 
+	# For Env
+	gem 'figaro'
+
 	# For Deploying
 	gem 'capistrano'
 	gem 'capistrano-rails'
@@ -36,7 +39,7 @@ end
 gem 'bourbon'
 gem 'neat'
 
-gem 'youtube_it'
+gem 'yt'
 
 gem 'devise'
 gem "jquery-fileupload-rails"

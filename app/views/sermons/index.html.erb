@@ -3,31 +3,23 @@
 <div id="sermon-bg">
 	<div id="current-sermon-wrap">
 		<div id="current-sermon">
-			<%= @sermons[0].embed_html5({
-					:class => 'video-player', 
-					:id => 'sermon-player',
-					:width => '560',
-					:height => '315',
-					:frameborder => '0', 
-					:controlls => '0',
-					fullscreen: true,
-			}).html_safe %>
+			<%= @sermons[0].video.embed_html.html_safe %>
 		</div>
 	</div>
 </div>
 
 <div id="current-sermon-name">
-	<b>Now Playing:</b> <%= @sermons[0].title %>
+	<b>Now Playing:</b> <%= @sermons[0].video.title %>
 </div>
 
 <div id="sermon-list">
 
 	<div class="container">
 		<% @sermons.each_with_index do |s| %>
-			<div class="sermon-listing" id="<%= s.unique_id %>">
-				<div class="top-color"><%= image_tag s.thumbnails[2].url %></div>
+			<div class="sermon-listing" id="<%= s.video_id %>">
+				<div class="top-color"><%= image_tag s.thumbnail_url %></div>
 				<div class="sermon-thumb">
-					<%= image_tag s.thumbnails[2].url %>
+					<%= image_tag s.thumbnail_url %>
 				</div>
 				<div class="sermon-title"><h4><%= s.title %></h4></div>
 				<div class="float-clear"></div>

@@ -26,3 +26,6 @@
 # Ignore deploy files
 /config/deploy.rb
 /config/deploy
+
+# Ignore application configuration
+/config/application.yml

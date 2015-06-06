@@ -4,35 +4,17 @@ class SermonsController < ApplicationController
 	# GET /sermons
 	# GET /sermons.json
 	def index
-		@sermons = VIDEO_CLIENT.playlist("PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ").videos[0..11]
-		thumbs = @sermons.first.thumbnails
-		max = 0
-		@image = ""
-
-		if thumbs[3]
-			@image = thumbs[3].url
-		else
-			@image = thumbs.first
-		end
-
+		@sermons = SERMONS.playlist_items.map {|pi| pi}[0..11]
+		puts @sermons.size
+		@image = @sermons.first.snippet.data["thumbnails"]["high"]["url"]
 		@image = Base64.encode64(open(@image).read)
 	end
 
 	def change_sermon
-		@sermon = VIDEO_CLIENT.my_video params[:id]
-		@image = @sermon.thumbnails[3].url
+		@sermon = Yt::Video.new id: params[:id]
+		@image = @sermon.snippet.data["thumbnails"]["high"]["url"]
 		@image = Base64.encode64(open(@image).read)
-		@player = @sermon.embed_html5({
-			:class => 'video-player', 
-			:id => 'sermon-player',
-			:width => '560',
-			:height => '315',
-			:frameborder => '0', 
-			:controlls => '0',
-			fullscreen: true,
-			wmode: 'opaque'
-		}).html_safe
-
+		@player = @sermon.embed_html.html_safe
 		@id = params[:id]
 	end
 
