@@ -4,7 +4,9 @@ class SermonsController < ApplicationController
 	# GET /sermons
 	# GET /sermons.json
 	def index
-		@sermons = SERMONS.playlist_items.map {|pi| pi}[0..11]
+		playlist = Yt::Playlist.new id: 'PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ'
+
+		@sermons = playlist.playlist_items.map {|pi| pi}[0..11]
 		puts @sermons.size
 		@image = @sermons.first.snippet.data["thumbnails"]["high"]["url"]
 		@image = Base64.encode64(open(@image).read)
