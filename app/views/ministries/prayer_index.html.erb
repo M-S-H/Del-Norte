@@ -1,0 +1,23 @@
+<section id="prayer-heading">
+	<div class="container">
+		<h2>Prayer Requests</h2>
+		<p>Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God.</p>
+		<p class="reference">Philippians 4:6</p>
+	</p>
+</section>
+
+<section id="prayer-form" class="container">
+	<p>Placeholer text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit nisl ac tortor pellentesque pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><br>
+	<%= form_tag '/prayer_request', remote: true do %>
+		<label>Name:</label><br>
+		<%= text_field_tag 'name' %><br>
+
+		<label>Email:</label><br>
+		<%= text_field_tag 'email' %><br>
+
+		<label>Prayer Request:</label><br>
+		<%= text_area_tag 'request' %><br>
+
+		<%= submit_tag 'Send', id: 'prayer-submit' %>
+	<% end %>
+</section>

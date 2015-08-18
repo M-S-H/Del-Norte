@@ -1,0 +1,11 @@
+var content = $('<div class="modal"><h1>Thank You</h1><p>Placeholder Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit nisl ac tortor pellentesque pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><div class="modal-close">Close</div>');
+$('body').css('overflow', 'hidden');
+$('body').append(content);
+$('body').append('<div id="screen"></div>');
+
+// Clear Form
+$("#prayer-form #name").val("");
+$("#prayer-form #email").val("");
+$("#prayer-form #request").val("");
+
+content.fadeIn();

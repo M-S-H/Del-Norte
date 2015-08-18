@@ -62,3 +62,87 @@
 	margin-bottom: 20px;
 	margin-top: 20px;
 }
+
+
+#prayer-heading {
+	margin-top: 80px;
+
+	text-align: center;
+	background: image-url('prayer.jpg') no-repeat center center;
+	background-size: cover;
+
+	h2 {
+		font-size: 24px;
+		@include media(769px) {
+			font-size: 48px;
+		}
+		text-transform: uppercase;
+		letter-spacing: 10px;
+		color: white;
+	}
+
+	p {
+		color: white;
+		font-size: 16px;
+		max-width: 600px;
+		margin: auto;
+		text-shadow: 1px 1px 3px black;
+	}
+
+	.reference {
+		text-transform: uppercase;
+		margin-top: 10px;
+	}
+
+	@include media(769px) {
+		background-attachment: fixed;
+		background-position-y: -300px;
+	}
+
+	@media(max-width: 769px) {
+		margin-top: 60px;
+	}
+
+	.container {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+
+
+#prayer-form {
+	margin-top: 50px;
+	label {
+		font-size: 12px;
+		text-transform: uppercase;
+		color: $light;
+	}
+
+
+	#{$all-text-inputs}, 
+	textarea {
+		//@include shadow;
+		//border: 1px solid $blue;
+		margin-bottom: 30px;
+		width: 100%;
+		font-size: 14px;
+	}
+
+
+	textarea {
+		height: 200px;
+	}
+
+
+	#prayer-submit {
+		border: none;
+		@include squarebutton($blue);
+		cursor: pointer;
+		background-color: white;
+		&:hover {color: white;}
+		margin: auto;
+		margin-bottom: 30px;
+		display: block;
+		font-size: 14px;
+	}
+}
