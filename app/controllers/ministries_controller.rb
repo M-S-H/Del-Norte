@@ -6,5 +6,6 @@ class MinistriesController < ApplicationController
 	end
 
 	def send_request
+		PrayerRequest.send_request
 	end
 end
