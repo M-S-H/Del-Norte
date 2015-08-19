@@ -14,12 +14,10 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'sdoc', '~> 0.4.0',				group: :doc
 
+gem 'figaro'
 
 group :development do 
 	gem 'spring'
-
-	# For Env
-	gem 'figaro'
 
 	# For Deploying
 	gem 'capistrano'
