@@ -1,1 +1,15 @@
-<h1>REQUEST</h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	</head>
+	<body style="background-color: #eee; padding: 40px;">
+		<div style="background-color: white; width: 80%; padding: 20px; margin: auto;">
+			<%= image_tag '/prayer_email.png' %>
+			<h1>Prayer Request</h1>
+			<h3><%= @name %></h3>
+			<h3><%= @email %></h3>
+			<p><%= @request %></p>
+		</div>
+	</body>
+</html>

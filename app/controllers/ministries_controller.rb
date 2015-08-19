@@ -5,7 +5,7 @@ class MinistriesController < ApplicationController
 	def prayer_index
 	end
 
-	def send_request
-		PrayerRequest.send_request.deliver
+	def send_request 
+		PrayerRequest.send_request(params[:name], params[:email], params[:request]).deliver
 	end
 end
