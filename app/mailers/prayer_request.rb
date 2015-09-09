@@ -5,6 +5,6 @@ class PrayerRequest < ActionMailer::Base
 		@name = name
 		@email = email
 		@request = request
-		mail(to: "mshickman91@gmail.com", subject: "Prayer Request");
+		mail(from: @email, to: "prayer@dnbc.org", subject: "Prayer Request From #{@name}");
 	end
 end

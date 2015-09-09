@@ -3,13 +3,14 @@
 	<head>
 		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 	</head>
-	<body style="background-color: #eee; padding: 40px;">
-		<div style="background-color: white; width: 80%; padding: 20px; margin: auto;">
-			<%= image_tag '/prayer_email.png' %>
-			<h1>Prayer Request</h1>
-			<h3><%= @name %></h3>
-			<h3><%= @email %></h3>
-			<p><%= @request %></p>
+	<body style="background-color: white; padding: 40px;">
+		<div style="width: 100px; height: 100px; margin: auto; margin-bottom: 20px;">
+			<%= image_tag 'http://dnbc.org/prayer.png', width: '100px' %>
 		</div>
+		<h1 style="font-size: 24px; font-family: Helvetica, Sans-Serif; text-align: center; font-weight: lighter; color: #444">PRAYER REQUEST</h1>
+		<h2 style="font-size: 18px; font-family: 'Book Antiqua', Serif; text-align: center; font-weight: normal; color: #999;"><i><%= @name %></i></h2>
+		<h2 style="font-size: 18px; font-family: 'Book Antiqua', Serif; text-align: center; font-weight: normal; color: #999;"><i><%= @email %></i></h2>
+		<br>
+		<p style="text-align: justify; font-size: 14px; color: #aaa;"><%= @request %></p>
 	</body>
 </html>
