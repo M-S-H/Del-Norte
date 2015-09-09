@@ -255,14 +255,14 @@ section {
 }
 
 
-#vbs {
+#prayer {
 	width: 100%;
 	padding: 100px;
-	background: image-url('vbs_bg.jpg') no-repeat center center;
+	background: image-url('praying-hands.jpg') no-repeat center center;
 	background-size: cover;
 
 	@include media(769px) {
-		background-attachment: fixed;
+		//background-attachment: fixed;
 	}
 
 	position: center;
@@ -285,6 +285,7 @@ section {
 	p {
 		color: white;
 		margin-bottom: 30px;
+		text-shadow: 1px 1px 3px black;
 	}
 
 	a {
