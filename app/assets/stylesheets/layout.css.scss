@@ -360,22 +360,22 @@ section {
 
 
 .staff {
-	margin-bottom: 40px;
-	@include omega(3n);
+	margin-bottom: 50px;
+	@include omega(4n);
 
 	img {
 		//mask-box-image: image-url("staff_mask.jpg");
 	}
 
 	.staff-image {
-		width: 200px;
-		height: 200px;
+		width: 180px;
+		height: 180px;
 		margin: auto;
 	}
 
 	.staff-mask {
 		position: relative;
-		top: -205px;
+		top: -185px;
 	}
 	
 	h2 {
