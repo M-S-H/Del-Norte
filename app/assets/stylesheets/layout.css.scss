@@ -410,7 +410,7 @@ section {
 
 .staff {
 	margin-bottom: 50px;
-	@include omega(4n);
+	@include omega(3n);
 
 	img {
 		//mask-box-image: image-url("staff_mask.jpg");
