@@ -27,4 +27,6 @@ Rails.application.routes.draw do
 
 	get '/download_jan' => 'application#download_jan'
 	get '/download_feb' => 'application#download_feb'
+
+	get '/contact' => 'application#contact'
 end

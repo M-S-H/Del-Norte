@@ -1,0 +1,55 @@
+#contact-heading {
+	margin-top: 80px;
+
+	text-align: center;
+	background: image-url('contact.jpg') no-repeat center center;
+	background-size: cover;
+
+	h2 {
+		font-size: 24px;
+		@include media(769px) {
+			font-size: 48px;
+		}
+		text-transform: uppercase;
+		letter-spacing: 10px;
+		color: white;
+	}
+
+	p {
+		color: white;
+		font-size: 16px;
+	}
+
+	@include media(769px) {
+		background-attachment: fixed;
+		background-position-y: -300px;
+	}
+
+	@media(max-width: 769px) {
+		margin-top: 60px;
+	}
+
+	.container {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+
+
+#contact-page {
+	#contact {
+		padding-top: 10px !important;
+	}
+}
+
+
+.contact-page-card {
+	@include media(769px) {
+		@include span-columns(6);
+		@include omega(2n);
+
+		p {
+			font-size: 14px;
+		}
+	}
+}
