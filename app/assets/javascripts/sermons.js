@@ -38,7 +38,7 @@ function initblur() {
 
 $(document).ready(function() {
 		// Change Sermons
-	$('.sermon-listing').click(function() {
+	$('.audio-listing').click(function() {
 		$("html, body").animate({ scrollTop: 0 }, "slow");
 		
 		$("#sermon-player h3").html($(this).attr('name'));
@@ -55,20 +55,20 @@ $(document).ready(function() {
 	});
 
 
-	// // Change Sermons
-	// $('.sermon-listing').click(function() {
-	// 	$("html, body").animate({ scrollTop: 0 }, "slow");
-	// 	$.ajax({
-	// 		url: '/change_sermon',
-	// 		data: { id: $(this).attr("id") },
-	// 		success: function (response) {
-	// 			//alert("success");
-	// 		},
-	// 		error: function () {
-	// 			//alert("error");
-	// 		}
-	// 	}); 
-	// });
+	// Change Sermons
+	$('.sermon-listing').click(function() {
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+		$.ajax({
+			url: '/change_sermon',
+			data: { id: $(this).attr("id") },
+			success: function (response) {
+				//alert("success");
+			},
+			error: function () {
+				//alert("error");
+			}
+		}); 
+	});
 });
 
 

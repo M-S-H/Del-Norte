@@ -29,7 +29,7 @@
 	<div id="audio-list">
 		<div class="container">
 			<% @sermons.each do |s| %>
-				<div class="sermon-listing" name="<%= s.name %>" image="<%= s.image %>" audio="<%= s.audio %>">
+				<div class="audio-listing" name="<%= s.name %>" image="<%= s.image %>" audio="<%= s.audio %>">
 					<div class="top-color"></div>
 					<div class="sermon-thumb">
 						<%= image_tag s.image %>
