@@ -15,6 +15,7 @@
 /public/assets
 /public/koinonia
 /public/calendar
+/public/sermons
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
