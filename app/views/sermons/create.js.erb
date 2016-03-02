@@ -1,0 +1,6 @@
+$("#sermon-form").fadeOut();
+$("#screen").fadeOut();
+
+var content = $("<%=j render 'entry', locals: {sermon: @sermon} %>").hide();
+$("#s-entries").prepend(content);
+content.fadeIn('slow');

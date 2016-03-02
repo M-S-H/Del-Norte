@@ -1,17 +1,24 @@
-<%= form_for(@sermon) do |f| %>
-  <% if @sermon.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@sermon.errors.count, "error") %> prohibited this sermon from being saved:</h2>
+<div id="sermon-form">
+	<%= form_for @sermon, multipart: true, remote: true do |f| %>
+		<h1>
+			<%= @sermon.id == nil ? "New Sermon" : @sermon.name %>
+		</h1>
 
-      <ul>
-      <% @sermon.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+		<%= f.text_field :name, placeholder: 'Name' %><br>
+		
+		<div id="select-sermon">Select Audio <span>None Selected</span></div>
+		<div id="select-cover">Select Image <span>None Selected</span></div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+		<input type="file" name="files[]" id="sermon_files" multiple/>
+		<%= f.file_field :image %>
+		<%= f.file_field :audio %>
+
+		<div id="s-<%= @sermon.id == nil ? 'create' : 'edit' %>"><%= @sermon.id == nil ? "Create" : "Save" %></div>
+		
+	<% end %>
+
+	<div id="progress">
+		<div class="bar-bg"></div>
+		<div class="bar" style="width: 0%;"></div>
+	</div>
+</div>

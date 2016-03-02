@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
 	resources :sermons
 	get '/change_sermon' => 'sermons#change_sermon'
+	get '/sermon_audio' => 'sermons#audio'
 
 	#get '/calendar' => 'application#calendar'
 	resources :calendars, except: [:show, :create, :new]
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
 	get '/dashboard' => 'admin#dashboard'
 	get '/dashboard/koinonia' => 'admin#koinonia'
 	get '/dashboard/calendars' => 'admin#calendars'
+	get '/dashboard/sermons' => 'admin#sermons'
 	get '/dashboard/alert' => 'admin#alert'
 	post '/dashboard/update_alert' => 'admin#update_alert'
 

@@ -45,18 +45,33 @@ class SermonsController < ApplicationController
 	def edit
 	end
 
+
+	def audio
+		@sermons = Sermon.all
+	end
+
+
+
 	# POST /sermons
 	# POST /sermons.json
 	def create
-		@sermon = Sermon.new(sermon_params)
+		
+		@sermon = Sermon.create name: params[:sermon][:name]
 
-		respond_to do |format|
-			if @sermon.save
-				format.html { redirect_to @sermon, notice: 'Sermon was successfully created.' }
-				format.json { render :show, status: :created, location: @sermon }
-			else
-				format.html { render :new }
-				format.json { render json: @sermon.errors, status: :unprocessable_entity }
+		if params[:files]
+			audio = params[:files].find {|f| f.original_filename =~ /.mp3/}
+			image = params[:files].find {|f| f.original_filename =~ /(.png|.jpg)/}
+		end
+
+		if audio
+			File.open(@sermon.audio_url, "wb") do |file|
+				file.write audio.read
+			end
+		end
+
+		if image
+			File.open(@sermon.image_url, "wb") do |file|
+				file.write image.read
 			end
 		end
 	end
@@ -78,11 +93,19 @@ class SermonsController < ApplicationController
 	# DELETE /sermons/1
 	# DELETE /sermons/1.json
 	def destroy
-		@sermon.destroy
-		respond_to do |format|
-			format.html { redirect_to sermons_url, notice: 'Sermon was successfully destroyed.' }
-			format.json { head :no_content }
+		@sermon = Sermon.find params[:id]
+
+		if File.exists?(@sermon.image_url)
+			File.delete(@sermon.image_url)
 		end
+
+		if File.exists?(@sermon.audio_url)
+			File.delete(@sermon.audio_url)
+		end
+
+		@sermon.delete
+
+		redirect_to "/dashboard/sermons"
 	end
 
 	private

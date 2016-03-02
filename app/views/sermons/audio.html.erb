@@ -1,0 +1,143 @@
+<section id="sermonaudio">
+	<audio id="audiosource" controls="controls">
+		<source src="<%= @sermons.first.audio %>" type="audio/mpeg" />
+		Your browser does not support the audio element.
+	</audio>
+
+	<div id="sermon-player">
+		<h3><%= @sermons.first.name %></h3>
+		<div class="container">
+			<div class="column-2">
+				<button onclick="toggleplayer()" id="control-button"><i class="fa fa-play"></i></button>
+			</div>
+
+			<div class="column-8" id="scrub">
+				<div id="slider"></div>
+			</div>
+
+			<div id="sermon-time" class="column-2">
+				<span id="current-time">0:00</span> / <span id="duration"></span>
+			</div>	
+		</div>
+	</div>
+
+	<div id="sermon-list">
+		<% @sermons.each do |s| %>
+			<a class="audio-listing" href="#" audio="<%= s.audio %>" image="<%= s.image %>"><%= s.name %></a>
+		<% end %>
+	</div>
+
+
+	<%= image_tag @sermons.first.image, id: "s-bg-image", width: "800px", height: '800px', onload: "initblur()" %>
+	<canvas id="sermon-canvas" width="800px" height="800px">
+	</canvas>
+</section>
+
+
+
+<script>
+	var player, control, marker, updateplayer;
+	var scrub = $("#slider");
+
+
+	function toggleplayer() {
+		if (player.paused) {
+			player.play();
+			control.removeClass('fa-play').addClass('fa-pause');
+		} else {
+			player.pause();
+			control.removeClass('fa-pause').addClass('fa-play');
+		}
+	}
+
+
+	function easytime(time) {
+		minutes = Math.floor(time/60);
+		seconds = Math.floor(time-(minutes*60));
+		
+		if (seconds < 10)
+			seconds = "0" + seconds
+
+		return minutes + ":" + seconds
+	}
+
+
+	function reset() {
+		if (!player.paused) {
+			toggleplayer();
+		}
+		player.currentTime = 0;
+		$("#current-time").html(easytime(0));
+		scrub.slider("option", "value", 0);
+	}
+
+
+	$(document).ready(function() {
+		scrub.slider({
+			step: 0.1
+		});
+
+		player = $("#audiosource")[0];
+		control = $("#control-button i");
+		marker = $("#current-marker");
+
+		player.onended = function() {
+			reset();
+		}
+
+		player.onloadedmetadata = function() {
+			$("#duration").html(easytime(player.duration));
+		};
+
+		player.autostart = false;
+
+		updateplayer = setInterval(function() {
+			if (!player.paused) {
+				current = player.currentTime;
+
+				// Update Slider
+				pos = (current * 100 / player.duration);
+				//marker.css('margin-left', pos + '%').css('margin-left', '-=8px');
+				scrub.slider("option", "value", pos);
+
+				// Update Time
+				$("#current-time").html(easytime(current));
+			}
+		}, 1000);
+
+
+		// testinterval = setInterval(function() {
+		// 	console.log(player.buffered.start(0));
+		// }, 100);
+
+		scrub.on("slidestart", function(event, ui) {
+			if (!player.paused) {toggleplayer();}
+			
+			player.pause();
+		});
+
+		scrub.on( "slidestop", function( event, ui ) {
+			var current = player.duration * scrub.slider("option", "value") / 100;
+			console.log(current);
+			player.currentTime = current;
+			$("#current-time").html(easytime(current));
+			toggleplayer();
+			player.play();
+		} );
+
+		scrub.on( "slide", function( event, ui ) {
+			var current = player.duration * scrub.slider("option", "value") / 100;
+			$("#current-time").html(easytime(current));
+		});
+
+
+		$(".audio-listing").click(function() {
+			$("#sermon-player h3").html($(this).html());
+			$("#audiosource source").attr("src", $(this).attr("audio"));
+			$("#s-bg-image").attr("src", $(this).attr("image"));
+			initblur();
+			player.load();
+			reset();
+		})
+	});
+</script>

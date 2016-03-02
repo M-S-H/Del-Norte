@@ -1,0 +1,17 @@
+<%= content_for :dash do %>
+	<h1>Sermon Aduio</h1>
+	<%= link_to raw('<i class="fa fa-plus-circle"></i> Create New'), "/sermons/new", id: 'new-sermon-link', remote: :true %>
+	<div id="new-sermon"></div>
+
+	<div id="s-entries">
+	<% @sermons.each do |s| %>
+		<div class="k-entry" id="<%= s.id %>">
+			<div class="k-entry-image"><%= image_tag s.image, width: '120px' %></div>
+			<div class="k-entry-destroy"><%= link_to 'Delete', s, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+			<div class="k-entry-edit"><%= link_to 'Edit', edit_sermon_path(s), remote: true %></div>
+			<div class="k-entry-name"><%= s.name %></div>
+			<div class="float-clear"></div>
+		</div>
+	<% end %>
+	</div>
+<% end %>

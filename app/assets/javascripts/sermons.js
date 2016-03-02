@@ -14,6 +14,7 @@ function initblur() {
 	context.drawImage(image,0,0, 800, 800);
 	stackBlurImage("s-bg-image", "sermon-canvas", 100, 1);
 	$('#sermon-bg').css("backgroundImage", "url(" + canvas.toDataURL() + ")");
+	$('#sermon-player').css("backgroundImage", "url(" + canvas.toDataURL() + ")");
 }
 
 
@@ -50,4 +51,38 @@ $(document).ready(function() {
 			}
 		}); 
 	});
+});
+
+
+
+
+$(document).ready(function() {
+	$('body').on('click', '#select-sermon', function() {
+		$('#sermon_audio').click();
+	});
+
+	$('body').on('click', '#select-cover', function() {
+		$('#sermon_image').click();
+	});
+
+	$('body').on('click', '#s-create', function() {
+		if (filelist == 0) {
+			alert("hello");
+			$('.new_sermon').submit();
+		}
+		else {
+			$('#progress').slideDown('fast');
+			$('.new_sermon').fileupload('send', {files: filelist});
+		}
+	});
+
+	// $('body').on('click', '#k-edit', function() {
+	// 	if (filelist == 0) {
+	// 		$('.edit_koinonium').submit();
+	// 	}
+	// 	else {
+	// 		$('#progress').slideDown('fast');
+	// 		$('.edit_koinonium').fileupload('send', {files: filelist});
+	// 	}
+	// });
 });

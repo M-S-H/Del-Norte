@@ -1,0 +1,7 @@
+<div class="k-entry" id="<%= @sermon.id %>">
+	<div class="k-entry-image"><%= image_tag @sermon.image, width: '120px' %></div>
+	<div class="k-entry-destroy"><%= link_to 'Delete', @sermon, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+	<div class="k-entry-edit"><%= link_to 'Edit', edit_sermon_path(@sermon), remote: true %></div>
+	<div class="k-entry-name"><%= @sermon.name %></div>
+	<div class="float-clear"></div>
+</div>

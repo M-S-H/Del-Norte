@@ -1,0 +1,149 @@
+#sermonaudio {
+	margin-top: 80px;
+	@media(max-width: 769px) {
+		margin-top: 60px;
+	}
+}
+
+
+#audiosource {
+	display: none;
+}
+
+
+#sermon-player {
+	background-color: black;
+	padding: 80px 0px;
+
+	h3 {
+		color: white;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 16px;
+		//letter-spacing: 10px;
+	}
+
+	@media(max-width: 769px) {
+		padding: 40px 0px;
+		h3 {
+			font-size: 14px;
+		}
+	}
+
+
+	background-position: 50% 50%;
+	background-repeat: no-repeat no-repeat;
+	background-size: cover;
+
+	-webkit-transition: background-image 1.0s ease-in-out;
+	-moz-transition: background-image 1.0s ease-in-out;
+	-ms-transition: background-image 1.0s ease-in-out;
+	-o-transition: background-image 1.0s ease-in-out;
+	transition: background-image 1.0s ease-in-out;
+}
+
+
+#control-button {
+	width: 50px;
+	height: 50px;
+
+	display: block;
+	border-radius: 50%;
+	background: none;
+	border: 2px solid white;
+	color: white;
+
+	.fa-play {
+		margin-left: 1.5px;
+	}
+
+	cursor: pointer;
+	&:hover {
+		opacity: 0.7;
+	}
+
+	@media(max-width: 769px) {
+		margin: auto;
+	}
+}
+
+
+#scrub {
+	padding-top: 22.5px;
+}
+
+
+#progress-bg {
+	width: 100%;
+	height: 10px;
+
+	border: 1px solid white;
+	border-radius: 5px;
+}
+
+
+#current-marker {
+	height: 16px;
+	width: 16px;
+	margin-top: -13px;
+	margin-left: -8px;
+
+	background-color: white;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+
+#sermon-time {
+	padding-top: 14px;
+
+	color: white;
+	text-align: right;
+	font-size: 13px;
+
+	@media(max-width: 769px) {
+		text-align: center;
+	}
+}
+
+
+// Slider
+.ui-widget-content {
+	border: 1px solid white;
+	background: none;
+}
+
+.ui-slider-horizontal {
+	height: 5px;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.ui-state-default {
+	border: none;
+	background-color: white;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+	width: 12px;
+	height: 12px;
+	top: -4px;
+	margin-left: -4px;
+	border-radius: 50%;
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+	}
+
+	&.ui-state-active {
+		border: 1px solid #ccc;
+		background-color: #ccc;
+	}
+}
+
+.ui-slider-handle {
+
+}

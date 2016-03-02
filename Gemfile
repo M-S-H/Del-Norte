@@ -10,6 +10,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
 
+gem 'jquery-ui-rails'
+
 gem 'jbuilder', '~> 2.0'
 
 gem 'sdoc', '~> 0.4.0',				group: :doc
