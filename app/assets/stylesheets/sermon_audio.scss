@@ -107,6 +107,47 @@
 }
 
 
+#previous-audio {
+	@include outer-container;
+	padding: 10px 20px;
+	background-color: white;
+	text-align: center;
+	font-family: $thin-font;
+	font-weight: 100;
+	color: #444;
+
+	@media (max-width: 769px) {
+		font-size: 12px;
+	}
+
+	i {
+		color: $blue;
+	}
+}
+
+
+#audio-list {
+	padding-top: 20px;
+	background-color: $light-bg;
+}
+
+
+.audio-listing {
+	margin-top: 1px;
+	@include card;
+}
+
+
+.audio-thumb {
+	width: 50px;
+	height: 50px;
+
+	background-color: blue;
+	border-radius: 50%;
+	float: left;
+}
+
+
 // Slider
 .ui-widget-content {
 	border: 1px solid white;

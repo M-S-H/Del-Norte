@@ -21,16 +21,29 @@
 		</div>
 	</div>
 
-	<div id="sermon-list">
-		<% @sermons.each do |s| %>
-			<a class="audio-listing" href="#" audio="<%= s.audio %>" image="<%= s.image %>"><%= s.name %></a>
-		<% end %>
+	<div id="previous-audio">
+		Sermon Listing<br>
+		<i class="fa fa-angle-down"></i>
+	</div>
+
+	<div id="audio-list">
+		<div class="container">
+			<% @sermons.each do |s| %>
+				<div class="sermon-listing" name="<%= s.name %>" image="<%= s.image %>" audio="<%= s.audio %>">
+					<div class="top-color"></div>
+					<div class="sermon-thumb">
+						<%= image_tag s.image %>
+					</div>
+					<div class="sermon-title"><h4><%= s.name %></h4></div>
+					<div class="float-clear"></div>
+				</div>
+			<% end %>
+		</div>
 	</div>
 
 
-	<%= image_tag @sermons.first.image, id: "s-bg-image", width: "800px", height: '800px', onload: "initblur()" %>
-	<canvas id="sermon-canvas" width="800px" height="800px">
-	</canvas>
+	<%= image_tag @sermons.first.image, id: "s-bg-image", width: "300px", height: '300px', onload: "initblur()" %>
+	<canvas id="sermon-canvas" width="300px" height="300px"></canvas>
 </section>
 
 
@@ -131,13 +144,13 @@
 		});
 
 
-		$(".audio-listing").click(function() {
-			$("#sermon-player h3").html($(this).html());
-			$("#audiosource source").attr("src", $(this).attr("audio"));
-			$("#s-bg-image").attr("src", $(this).attr("image"));
-			initblur();
-			player.load();
-			reset();
-		})
+		// $(".audio-listing").click(function() {
+		// 	$("#sermon-player h3").html($(this).html());
+		// 	$("#audiosource source").attr("src", $(this).attr("audio"));
+		// 	$("#s-bg-image").attr("src", $(this).attr("image"));
+		// 	initblur();
+		// 	player.load();
+		// 	reset();
+		// })
 	});
 </script>
