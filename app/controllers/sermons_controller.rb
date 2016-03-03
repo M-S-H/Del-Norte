@@ -49,7 +49,7 @@ class SermonsController < ApplicationController
 
 
 	def audio
-		@sermons = Sermon.all
+		@sermons = Sermon.all[0..11].reverse
 	end
 
 

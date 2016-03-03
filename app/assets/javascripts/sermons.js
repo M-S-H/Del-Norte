@@ -49,7 +49,7 @@ $(document).ready(function() {
 			toggleplayer();
 		}
 
-		initblur();
+		// initblur();
 		player.load();
 		reset();
 	});
