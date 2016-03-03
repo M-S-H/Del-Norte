@@ -94,13 +94,13 @@ $(document).ready(function() {
 		}
 	});
 
-	// $('body').on('click', '#k-edit', function() {
-	// 	if (filelist == 0) {
-	// 		$('.edit_koinonium').submit();
-	// 	}
-	// 	else {
-	// 		$('#progress').slideDown('fast');
-	// 		$('.edit_koinonium').fileupload('send', {files: filelist});
-	// 	}
-	// });
+	$('body').on('click', '#s-edit', function() {
+		if (filelist == 0) {
+			$('.edit_sermon').submit();
+		}
+		else {
+			$('#progress').slideDown('fast');
+			$('.edit_sermon').fileupload('send', {files: filelist});
+		}
+	});
 });

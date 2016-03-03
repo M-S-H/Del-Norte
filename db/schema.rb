@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228233013) do
+ActiveRecord::Schema.define(version: 20160303213348) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160228233013) do
     t.string   "name"
     t.string   "image"
     t.text     "description"
+    t.string   "sermondate"
   end
 
 end

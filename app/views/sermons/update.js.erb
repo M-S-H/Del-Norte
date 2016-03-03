@@ -1,0 +1,7 @@
+$("#sermon-form").fadeOut();
+$("#screen").fadeOut();
+console.log("updated");
+
+var entry = $("#<%= @sermon.id %>");
+var content = $("<%=j render 'entry', locals: {sermon: @sermon} %>");
+entry.replaceWith(content);

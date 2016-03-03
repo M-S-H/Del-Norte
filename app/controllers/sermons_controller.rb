@@ -43,6 +43,8 @@ class SermonsController < ApplicationController
 
 	# GET /sermons/1/edit
 	def edit
+		# @sermon = Sermon.find params[:id]
+		render 'new.js.erb'
 	end
 
 
@@ -56,7 +58,7 @@ class SermonsController < ApplicationController
 	# POST /sermons.json
 	def create
 		
-		@sermon = Sermon.create name: params[:sermon][:name]
+		@sermon = Sermon.create name: params[:sermon][:name], sermondate: params[:sermon][:sermondate]
 
 		if params[:files]
 			audio = params[:files].find {|f| f.original_filename =~ /.mp3/}
@@ -79,13 +81,22 @@ class SermonsController < ApplicationController
 	# PATCH/PUT /sermons/1
 	# PATCH/PUT /sermons/1.json
 	def update
-		respond_to do |format|
-			if @sermon.update(sermon_params)
-				format.html { redirect_to @sermon, notice: 'Sermon was successfully updated.' }
-				format.json { render :show, status: :ok, location: @sermon }
-			else
-				format.html { render :edit }
-				format.json { render json: @sermon.errors, status: :unprocessable_entity }
+		@sermon.update name: params[:sermon][:name], sermondate: params[:sermon][:sermondate]
+
+		if params[:files]
+			audio = params[:files].find {|f| f.original_filename =~ /.mp3/}
+			image = params[:files].find {|f| f.original_filename =~ /(.png|.jpg)/}
+		end
+
+		if audio
+			File.open(@sermon.audio_url, "wb") do |file|
+				file.write audio.read
+			end
+		end
+
+		if image
+			File.open(@sermon.image_url, "wb") do |file|
+				file.write image.read
 			end
 		end
 	end
