@@ -52,4 +52,11 @@
 			font-size: 14px;
 		}
 	}
+
+	a {
+		text-decoration: underline;
+		&:hover {
+			color: $blue;
+		}
+	}
 }
