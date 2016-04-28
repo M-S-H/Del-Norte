@@ -303,20 +303,19 @@ section {
 }
 
 
-#directory {
+#vbs {
 	width: 100%;
 	padding: 100px;
-	// background: image-url('praying-hands.jpg') no-repeat center center;
-	// background-size: cover;
-	background-color: $light-bg;
+	background: image-url('vbs_bg.jpg') no-repeat center center;
+	background-size: cover;
 
 	@include media(769px) {
-		//background-attachment: fixed;
+		background-attachment: fixed;
 	}
 
 	position: center;
 	text-align: center;
-	color: $blue;
+	color: white;
 
 	img {
 		margin-bottom: 20px;
@@ -325,25 +324,25 @@ section {
 	h2 {
 		font-size: 24px;
 		@include media(769px) {
-			font-size: 48px;
+			font-size: 36px;
 		}
 		text-transform: uppercase;
 		letter-spacing: 10px;
 	}
 
 	p {
-		color: $dark;
+		color: white;
 		margin-bottom: 30px;
-		//text-shadow: 1px 1px 3px black;
+		text-shadow: 1px 1px 3px black;
 	}
 
 	a {
 		margin-top: 20px;
 		padding: 10px 40px;
 
-		color: $blue;
+		color: white;
 		text-transform: uppercase;
-		border: 1px solid $blue;
+		border: 1px solid white;
 
 		&:hover {
 			opacity: 0.5;
