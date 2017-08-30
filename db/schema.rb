@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160303213348) do
   create_table "koinonia", force: true do |t|
     t.string   "name"
     t.string   "image_url"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
