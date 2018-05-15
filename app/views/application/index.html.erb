@@ -1,9 +1,26 @@
+<section class="vbs-popup-wrapper">
+	<div class="vbs-popup">
+		<a class="close-popup">Close</a>
+		<div>
+			<%= image_tag "vbs_logo_18.png", width: "80%" %>
+		</div>
+		<div>
+			<h2>VBS is almost here!</h2>
+			<p>June 25th - 29th, 9:00am - 12:15pm</p>
+			<%= link_to 'Register for VBS today!', 'https://kideventpro.lifeway.com/myChurch/?id=48330', class: 'register-now' %>
+		</div>
+	</div>
+</section>
+
 <section id="welcome">
 	<div id="welcome-content" class="container">
 		<div class="column-8 shift-2">
 			<%= image_tag 'compass.png' %>
-			<h1>Welcome To Del Norte</h1>
+			<h1>Welcome to Del Norte</h1>
+			<p>Ministry. Missions. Movers.</p>
+			<!--
 			<p>We are a united body of believers committed to grow in Christ and reach others for Christ.</p>
+			-->
 			<%= link_to "Learn More", "#", id: "learn-more" %>
 		</div>
 	</div>
@@ -183,3 +200,22 @@
 		</div>
 	</div>
 </section>
+
+<script>
+	$(document).ready(function() {
+		setTimeout(function() {
+			$('.vbs-popup-wrapper').addClass('visible');
+
+			setTimeout(function() {
+				$('.vbs-popup-wrapper').addClass('shown');
+			}, 100);
+		}, 100);
+
+		$('.vbs-popup-wrapper').click(function() {
+			$('.vbs-popup-wrapper').removeClass('shown');
+			setTimeout(function() {
+				$('.vbs-popup-wrapper').removeClass('visible');
+			}, 200)
+		})
+	})
+</script>

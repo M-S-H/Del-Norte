@@ -2,11 +2,14 @@
 	<!--<li><%= link_to 'Sermons', 'https://www.youtube.com/playlist?list=PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ' %></li>-->
 	<li><%= link_to 'Sermons', '/sermons' %></li>
 	<li><%= link_to 'Ministries', '/ministries' %></li>
+	<!--
 	<li><%= link_to 'Children', 'http://delnortekids.weebly.com' %>
+	-->
 	<li><%= link_to 'Calendar', '/calendars' %></li>
 	<li><%= link_to 'Koinonia', '/koinonia' %></li>
 	<li><%= link_to 'Contact', '/contact' %></li>
 	<% if admin_signed_in? %>
 		<li><%= link_to 'Admin', '/dashboard' %></li>
 	<% end %>
+	<li class="vbs-reg learn-more"><%= link_to 'VBS Registration', 'https://kideventpro.lifeway.com/myChurch/?id=48330' %>
 </ul>
