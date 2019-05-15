@@ -1,16 +1,16 @@
-<!-- <section class="vbs-popup-wrapper">
+<section class="vbs-popup-wrapper">
 	<div class="vbs-popup">
 		<a class="close-popup">Close</a>
 		<div>
-			<%= image_tag "vbs_logo_18.png", width: "80%" %>
+			<%= image_tag "vbs_2019.png", width: "50%" %>
 		</div>
 		<div>
 			<h2>VBS is almost here!</h2>
-			<p>June 25th - 29th, 9:00am - 12:15pm</p>
-			<%= link_to 'Register for VBS today!', 'https://kideventpro.lifeway.com/myChurch/?id=48330', class: 'register-now' %>
+			<p>June 24th - 28th, 9:00am - 12:15pm</p>
+			<%= link_to 'Register for VBS today!', 'https://kideventpro.lifeway.com/myChurch/?id=53046', class: 'register-now' %>
 		</div>
 	</div>
-</section> -->
+</section>
 
 <section id="welcome">
 	<div id="welcome-content" class="container">
@@ -30,7 +30,7 @@
 <section id="welcome-msg">
 	<div class="container">
 		<div class="column-8 shift-2">
-			<h1 class="fancy-underline">A Word From Pastor Brad</h1>
+			<h1 class="fancy-underline">Welcome!</h1>
 			<p>Thank you so much for visiting our church family web-site. You will see that we are a church family that believes strongly in the whole truth of the Word of God. We believe in reaching out to all people. Why? Because all people are welcomed and desired in the family of God and DNBC is a great example of that fellowship. We strive to focus on biblical discipleship, loving outreach, kingdom building work. We are not a perfect family. Our Father has saved and redeemed us all out of the pit of sin. We are a family made up of individuals that desperately needed the grace and love of Christ in our lives. Though each of our testimonies is quite unique, they all end with the saving grace of Jesus!  So when you look through our site and come and visit our family at DNBC you will visit a family that is totally reliant on our Lord and Savior Jesus Christ. Once again, thank you for showing interest in our church family. We are blessed by your coming. </p>
 		</div>
 	</div>
@@ -96,7 +96,7 @@
 	<h1 class="fancy-underline">Our Staff</h1>
 	<div class="container">
 
-		<div class="staff column-3">
+		<!-- <div class="staff column-3">
 			<div class="staff-image">
 				<%= image_tag "staff/brad.jpg", width: "180px" %>
 				<%= image_tag "staff_mask.png", width: "180px", class: "staff-mask" %>
@@ -104,7 +104,7 @@
 			<h2 class="underline">Brad Kelley</h2>
 			<p>Senior Pastor</p>
 			<%= mail_to "brad@dnbc.org", raw('<div class="staff-email"><i class="fa fa-envelope"></i></div>') %>
-		</div>
+		</div> -->
 
 		<div class="staff column-3">
 			<div class="staff-image">
@@ -202,20 +202,24 @@
 </section>
 
 <script>
-	// $(document).ready(function() {
-	// 	setTimeout(function() {
-	// 		$('.vbs-popup-wrapper').addClass('visible');
+	$(document).ready(function() {
+		if (sessionStorage.getItem('vbs:seen')) { return; }
 
-	// 		setTimeout(function() {
-	// 			$('.vbs-popup-wrapper').addClass('shown');
-	// 		}, 100);
-	// 	}, 100);
+		setTimeout(function() {
+			$('.vbs-popup-wrapper').addClass('visible');
 
-	// 	$('.vbs-popup-wrapper').click(function() {
-	// 		$('.vbs-popup-wrapper').removeClass('shown');
-	// 		setTimeout(function() {
-	// 			$('.vbs-popup-wrapper').removeClass('visible');
-	// 		}, 200)
-	// 	})
-	// })
+			sessionStorage.setItem('vbs:seen', true);
+
+			setTimeout(function() {
+				$('.vbs-popup-wrapper').addClass('shown');
+			}, 100);
+		}, 100);
+
+		$('.vbs-popup-wrapper').click(function() {
+			$('.vbs-popup-wrapper').removeClass('shown');
+			setTimeout(function() {
+				$('.vbs-popup-wrapper').removeClass('visible');
+			}, 200)
+		})
+	})
 </script>
