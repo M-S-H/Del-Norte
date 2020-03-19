@@ -1,18 +1,18 @@
-<!--
-<section class="vbs-popup-wrapper">
-	<div class="vbs-popup">
+<section class="popup-wrapper" id="popup">
+	<div class="popup">
 		<a class="close-popup">Close</a>
-		<div>
-			<%= image_tag "vbs_2019.png", width: "50%" %>
+		<h4>A Message From Pastor Chuck</h4>
+		<div class="video-wrap">
+			<iframe src="https://www.youtube.com/embed/MHmiBVDiSsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
+		<!-- >
 		<div>
 			<h2>VBS is almost here!</h2>
 			<p>June 24th - 28th, 9:00am - 12:15pm</p>
 			<%= link_to 'Register for VBS today!', 'https://kideventpro.lifeway.com/myChurch/?id=53046', class: 'register-now' %>
-		</div>
+		</div> -->
 	</div>
 </section>
--->
 
 <section id="welcome">
 	<div id="welcome-content" class="container">
@@ -204,24 +204,29 @@
 </section>
 
 <script>
-	// $(document).ready(function() {
-	// 	if (sessionStorage.getItem('vbs:seen')) { return; }
+	$(document).ready(function() {
+		if (sessionStorage.getItem('popup:seen')) {
+			document.getElementById('popup').remove();
+			popup.parentElement.remove(popup);
+		}
 
-	// 	setTimeout(function() {
-	// 		$('.vbs-popup-wrapper').addClass('visible');
+		setTimeout(function() {
+			$('.popup-wrapper').addClass('visible');
 
-	// 		sessionStorage.setItem('vbs:seen', true);
+			sessionStorage.setItem('popup:seen', true);
 
-	// 		setTimeout(function() {
-	// 			$('.vbs-popup-wrapper').addClass('shown');
-	// 		}, 100);
-	// 	}, 100);
+			setTimeout(function() {
+				$('.popup-wrapper').addClass('shown');
+			}, 100);
+		}, 100);
 
-	// 	$('.vbs-popup-wrapper').click(function() {
-	// 		$('.vbs-popup-wrapper').removeClass('shown');
-	// 		setTimeout(function() {
-	// 			$('.vbs-popup-wrapper').removeClass('visible');
-	// 		}, 200)
-	// 	})
-	// })
+		$('.popup-wrapper').click(function() {
+			$('.popup-wrapper').removeClass('shown');
+			setTimeout(function() {
+				// $('.popup-wrapper').removeClass('visible');
+				document.getElementById('popup').remove();
+				// popup.parentElement.remove(popup);
+			}, 200)
+		})
+	})
 </script>
