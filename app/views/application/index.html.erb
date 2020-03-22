@@ -1,9 +1,11 @@
 <section class="popup-wrapper" id="popup">
 	<div class="popup">
-		<a class="close-popup">Close</a>
-		<h4>A Message From Pastor Chuck</h4>
+		<div class="popup-header">
+			<a class="close-popup"><i class="fa fa-times-circle" aria-hidden="true"></i> Close</a>
+			<h4>Our Latest Sermon: March 22nd</h4>
+		</div>
 		<div class="video-wrap">
-			<iframe src="https://www.youtube.com/embed/MHmiBVDiSsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe src="https://www.youtube.com/embed/rWBJLX7kSOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 		<!-- >
 		<div>
@@ -19,11 +21,10 @@
 		<div class="column-8 shift-2">
 			<%= image_tag 'compass.png' %>
 			<h1>Welcome to Del Norte</h1>
-			<p>Ministry. Missions. Movers.</p>
-			<!--
+			<%# <p>Ministry. Missions. Movers.</p> %>
+			
 			<p>We are a united body of believers committed to grow in Christ and reach others for Christ.</p>
-			-->
-			<%= link_to "Learn More", "#", id: "learn-more" %>
+			<%= link_to "Learn More", "#", id: "learn-more" %> <%= link_to "Latest Sermon", "https://youtu.be/rWBJLX7kSOY", class: "latest-sermon" %>
 		</div>
 	</div>
 	<div id="arrow-down"><i class="fa fa-angle-double-down"></i></div>
@@ -220,7 +221,7 @@
 			}, 100);
 		}, 100);
 
-		$('.popup-wrapper').click(function() {
+		$('.close-popup').click(function() {
 			$('.popup-wrapper').removeClass('shown');
 			setTimeout(function() {
 				// $('.popup-wrapper').removeClass('visible');
