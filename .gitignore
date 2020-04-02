@@ -32,3 +32,5 @@
 /config/application.yml
 
 .ruby-version
+
+.DS_Store
