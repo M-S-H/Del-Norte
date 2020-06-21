@@ -9,6 +9,12 @@ class ApplicationController < ActionController::Base
 
 	def index
 		@alert = Alert.first
+		playlist = Yt::Playlist.new id: 'PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ'
+		@sermon = playlist.playlist_items.first
+
+		# @sermons = playlist.playlist_items.map {|pi| pi}[0..11]
+		# @image = @sermons.first.snippet.data["thumbnails"]["high"]["url"]
+		# @image = Base64.encode64(open(@image).read)
 	end
 
 	def download_jan
