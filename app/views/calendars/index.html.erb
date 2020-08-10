@@ -12,20 +12,43 @@
 			<h4 class="underline">Current Month</h4>
 			<h2><%= "#{@current.name} #{Time.now.in_time_zone('America/Denver').year}" %></h2>
 			<%= link_to 'View Calendar', @current.pdf_url, target: "_blank" %><br>
-			<%= link_to 'Download Calendar', "/calendar/#{@current.id}/download" %>
+			<!-- <%= link_to 'Download Calendar', "/calendar/#{@current.id}/download" %> -->
 		</div>
 
 		<div class="column-6" id="next-calendar">
 			<h4 class="underline">Next Month</h4>
 			<h2><%= "#{@next.name} #{Time.now.in_time_zone('America/Denver').year}" %></h2>
 			<%= link_to 'View Calendar', @next.pdf_url, target: "_blank" %><br>
-			<%= link_to 'Download Calendar', "/calendar/#{@next.id}/download" %>
+			<!-- <%= link_to 'Download Calendar', "/calendar/#{@next.id}/download" %> -->
 		</div>
 	</div>
 </section>
 
 
-<section id="upcoming-events" class="container">
-	<h4 class="underline">Upcoming Events</h4>
-	<h2>Coming Soon</h2>
+<section id="info">
+	<h1 class="fancy-underline">Join Us on Sunday</h1>
+
+	<div class="container">
+		<div class="info-blurb column-4">
+			<div class="info-icon"><i class="fa fa-group"></i></div>
+			<h2 class="underline">Services</h2>
+			<p>8:30am – Drive In Service<br>
+			11am – In Person Service</p>
+		</div>
+		<div class="info-blurb column-4">
+			<div class="info-icon"><i class="fa fa-globe"></i></div>
+			<h2 class="underline">Live Stream</h2>
+			<p>Both our 8:30, and 11:00 services are live streamed and can be watched here, and on our youtube channel.</p>
+		</div>
+		<%# <div class="info-blurb column-4">
+			<div class="info-icon"><i class="fa fa-globe"></i></div>
+			<h2 class="underline">Spanish Service</h2>
+			<p>Upstairs in Room 230 at 11am.</p>
+		</div> %>
+		<div class="info-blurb column-4">
+			<div class="info-icon"><i class="fa fa-book"></i></div>
+			<h2 class="underline">Bible Study</h2>
+			<p>Our Bible Study classes have moved online! Contact us for more information.</p>
+		</div>
+	</div>
 </section>
