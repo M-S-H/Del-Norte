@@ -6,7 +6,7 @@ class SermonsController < ApplicationController
 	def index
 		playlist = Yt::Playlist.new id: 'PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ'
 
-		@sermons = playlist.playlist_items.map {|pi| pi}[0..11]
+		@sermons = playlist.playlist_items.where(public?: true).map {|pi| pi}[0..11]
 		@image = @sermons.first.snippet.data["thumbnails"]["high"]["url"]
 		@image = Base64.encode64(open(@image).read)
 	end
