@@ -68,13 +68,13 @@ header {
 	float: left;
 
 	#logo-norm {
-		@media(max-width: 769px) {
+		@media(max-width: 894px) {
 			display: none;
 		}
 	}
 
 	#logo-mob {
-		@media(min-width: 769px) {
+		@media(min-width: 894px) {
 			display: none;
 		}
 	}
@@ -267,10 +267,10 @@ section {
 }
 
 
-#prayer {
+#blog {
 	width: 100%;
 	padding: 100px;
-	background: image-url('praying-hands.jpg') no-repeat center center;
+	background: image-url('blog.jpg') no-repeat center center;
 	background-size: cover;
 
 	@include media(769px) {
