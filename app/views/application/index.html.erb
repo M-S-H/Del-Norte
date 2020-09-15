@@ -26,7 +26,7 @@
 			<%# <p>Ministry. Missions. Movers.</p> %>
 			
 			<p>We are a united body of believers committed to grow in Christ and reach others for Christ.</p>
-			<%= link_to "Learn More", "#", id: "learn-more" %> <%= link_to "Latest Sermon", "https://youtu.be/rWBJLX7kSOY", class: "latest-sermon" %>
+			<%= link_to "Learn More", "#", id: "learn-more" %> <%= link_to "Latest Sermon", "https://youtu.be/#{@sermon.video.id}", target: "_blank", class: "latest-sermon" %>
 		</div>
 	</div>
 	<div id="arrow-down"><i class="fa fa-angle-double-down"></i></div>
