@@ -39,7 +39,7 @@ end
 gem 'bourbon'
 gem 'neat'
 
-gem 'yt'
+gem 'yt', '0.33.4'
 
 gem 'devise'
 gem "jquery-fileupload-rails"
