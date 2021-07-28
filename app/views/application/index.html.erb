@@ -84,7 +84,7 @@
 		<div class="info-blurb column-4">
 			<div class="info-icon"><i class="fa fa-book"></i></div>
 			<h2 class="underline">Bible Study</h2>
-			<p>Classes for any and every age group at 9:45am will resume June 6th.</p>
+			<p>Classes for any and every age group at 9:45am.</p>
 		</div>
 		<%# <div class="info-blurb column-4">
 			<div class="info-icon"><i class="fa fa-book"></i></div>
@@ -234,26 +234,26 @@
 <script>
 	const wrapper = '.vbs-popup-wrapper'
 
-	$(document).ready(function() {
-		if (sessionStorage.getItem('vbs:seen')) { return; }
+	// $(document).ready(function() {
+	// 	if (sessionStorage.getItem('vbs:seen')) { return; }
 
-		setTimeout(function() {
-			$('.vbs-popup-wrapper').addClass('visible');
+	// 	setTimeout(function() {
+	// 		$('.vbs-popup-wrapper').addClass('visible');
 
-			sessionStorage.setItem('vbs:seen', true);
+	// 		sessionStorage.setItem('vbs:seen', true);
 
-			setTimeout(function() {
-				$('.vbs-popup-wrapper').addClass('shown');
-			}, 100);
-		}, 100);
+	// 		setTimeout(function() {
+	// 			$('.vbs-popup-wrapper').addClass('shown');
+	// 		}, 100);
+	// 	}, 100);
 
-		$('.vbs-popup-wrapper').click(function() {
-			$('.vbs-popup-wrapper').removeClass('shown');
-			setTimeout(function() {
-				$('.vbs-popup-wrapper').removeClass('visible');
-			}, 200)
-		})
-	})
+	// 	$('.vbs-popup-wrapper').click(function() {
+	// 		$('.vbs-popup-wrapper').removeClass('shown');
+	// 		setTimeout(function() {
+	// 			$('.vbs-popup-wrapper').removeClass('visible');
+	// 		}, 200)
+	// 	})
+	// })
 
 	// $(document).ready(function() {
 	// 	if (sessionStorage.getItem('popup:seen')) {
