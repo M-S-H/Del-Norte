@@ -6,9 +6,19 @@ class SermonsController < ApplicationController
 	def index
 		playlist = Yt::Playlist.new id: 'PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ'
 
-		@sermons = playlist.playlist_items.where(public?: true).map {|pi| pi}[0..11]
-		@image = @sermons.first.snippet.data["thumbnails"]["high"]["url"]
-		@image = Base64.encode64(open(@image).read)
+		10.times do |x|
+			puts x
+			begin
+				@sermons = playlist.playlist_items.where(public?: true).map {|pi| pi}[0..11]
+				@image = @sermons.first.snippet.data["thumbnails"]["high"]["url"]
+				@image = Base64.encode64(open(@image).read)
+				break
+			rescue
+				if x == 9
+					throw 'could not get videos'
+				end
+			end
+		end
 	end
 
 	def change_sermon
