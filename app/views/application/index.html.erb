@@ -1,9 +1,9 @@
-<!--
+
 <section class="popup-wrapper" id="popup">
 	<div class="popup">
 		<div class="popup-header">
 			<a class="close-popup"><i class="fa fa-times-circle" aria-hidden="true"></i> Close</a>
-			<h4>Our Latest Sermon:</h4>
+			<h4>Watch Our Live Service:</h4>
 		</div>
 		<div class="video-wrap">
 			<%= @sermon.video.embed_html.html_safe %>
@@ -11,9 +11,9 @@
 		</div>
 	</div>
 </section>
--->
 
 
+<!--
 <section class="vbs-popup-wrapper" id="popup">
 	<div class="vbs-popup">
 		<a class="close-popup">Close</a>
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 </section>
-
+-->
 
 <section id="welcome">
 	<div id="welcome-content" class="container">
@@ -232,7 +232,8 @@
 </section>
 
 <script>
-	const wrapper = '.vbs-popup-wrapper'
+	// const wrapper = '.vbs-popup-wrapper'
+	const wrapper = '.popup-wrapper'
 
 	// $(document).ready(function() {
 	// 	if (sessionStorage.getItem('vbs:seen')) { return; }
@@ -255,29 +256,35 @@
 	// 	})
 	// })
 
-	// $(document).ready(function() {
-	// 	if (sessionStorage.getItem('popup:seen')) {
-	// 		document.getElementById('popup').remove();
-	// 		popup.parentElement.remove(popup);
-	// 	}
+	<% if @show_popup %>
+		$(document).ready(function() {
+			if (sessionStorage.getItem('popup:seen')) {
+				document.getElementById('popup').remove();
+				popup.parentElement.remove(popup);
+			}
 
-	// 	setTimeout(function() {
-	// 		$(wrapper).addClass('visible');
+			// const today = new Date()
+			// const utcDay = today.getUtcDay()
+			// const utcTime = 
 
-	// 		sessionStorage.setItem('popup:seen', true);
+			setTimeout(function() {
+				$(wrapper).addClass('visible');
 
-	// 		setTimeout(function() {
-	// 			$(wrapper).addClass('shown');
-	// 		}, 100);
-	// 	}, 100);
+				sessionStorage.setItem('popup:seen', true);
 
-	// 	$('.close-popup').click(function() {
-	// 		$(wrapper).removeClass('shown');
-	// 		setTimeout(function() {
-	// 			// $(wrapper).removeClass('visible');
-	// 			document.getElementById('popup').remove();
-	// 			// popup.parentElement.remove(popup);
-	// 		}, 200)
-	// 	})
-	// })
+				setTimeout(function() {
+					$(wrapper).addClass('shown');
+				}, 100);
+			}, 100);
+
+			$('.close-popup').click(function() {
+				$(wrapper).removeClass('shown');
+				setTimeout(function() {
+					// $(wrapper).removeClass('visible');
+					document.getElementById('popup').remove();
+					// popup.parentElement.remove(popup);
+				}, 200)
+			})
+		})
+	<% end %>
 </script>

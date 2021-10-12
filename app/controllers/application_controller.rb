@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
 		@alert = Alert.first
 		playlist = Yt::Playlist.new id: 'PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ'
 		@sermon = playlist.playlist_items.find {|x| x.public? }
+		@show_popup = false
+		if @sermon && @sermon.video.live_broadcast_content != "none"
+			@show_popup = true
+		end
 
 		# @sermons = playlist.playlist_items.map {|pi| pi}[0..11]
 		# @image = @sermons.first.snippet.data["thumbnails"]["high"]["url"]
