@@ -636,6 +636,7 @@ footer {
 .popup.christmas-camp {
 	background: image-url('christmas-camp.jpg');
 	background-size: cover;
+	background-position: center;
 	color: white;
 
 	h1 {
@@ -646,11 +647,20 @@ footer {
 		font-size: 26px;
 	}
 
+	@media(max-width: 769px) {
+		h1 { font-size: 24px; padding-top: 20px; }
+		h2 { font-size: 20px; }
+	}
+
 	.christmas-content {
 		width: 60%;
 		margin: auto;
 		padding: 20px;
 		text-align: center;
+		@media(max-width: 769px) {
+			width: 100%;
+			//background-color: rgba(255,255,255,0.5);
+		}
 	}
 
 	p {
