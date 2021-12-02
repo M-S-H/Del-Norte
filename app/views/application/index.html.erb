@@ -12,6 +12,19 @@
 	</div>
 </section>
 
+<section class="popup-wrapper" id="christmas-camp">
+	<div class="popup">
+		<div class="popup-header">
+			<a class="christmas-close-popup"><i class="fa fa-times-circle" aria-hidden="true"></i> Close</a>
+			<h4>Watch Our Live Service:</h4>
+		</div>
+		<div class="video-wrap">
+			<%= @sermon.video.embed_html.html_safe %>
+			<%# <iframe src="https://www.youtube.com/embed/f5RH96_qYY4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> %>
+		</div>
+	</div>
+</section>
+
 
 <!--
 <section class="vbs-popup-wrapper" id="popup">
@@ -282,6 +295,32 @@
 				setTimeout(function() {
 					// $(wrapper).removeClass('visible');
 					document.getElementById('popup').remove();
+					// popup.parentElement.remove(popup);
+				}, 200)
+			})
+		})
+	<% else %>
+		$(document).ready(function() {
+			if (sessionStorage.getItem('popup:seen')) {
+				document.getElementById('christmas-camp').remove();
+				popup.parentElement.remove(popup);
+			}
+
+			setTimeout(function() {
+				$(wrapper).addClass('visible');
+
+				sessionStorage.setItem('popup:seen', true);
+
+				setTimeout(function() {
+					$(wrapper).addClass('shown');
+				}, 100);
+			}, 100);
+
+			$('.christmas-close-popup').click(function() {
+				$(wrapper).removeClass('shown');
+				setTimeout(function() {
+					// $(wrapper).removeClass('visible');
+					document.getElementById('christmas-camp').remove();
 					// popup.parentElement.remove(popup);
 				}, 200)
 			})
