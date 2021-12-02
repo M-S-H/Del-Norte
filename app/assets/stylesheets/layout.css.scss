@@ -577,7 +577,8 @@ footer {
 			margin-bottom: 0px;
 		}
 
-		.close-popup {
+		.close-popup,
+		.christmas-close-popup {
 			position: absolute;
 			// top: 10px;
 			right: 20px;
@@ -630,6 +631,39 @@ footer {
 	// div:last-child {
 	// 	display: flex;
 	// }
+}
+
+.popup.christmas-camp {
+	background: url('christmas-camp.jpg');
+	background-size: cover;
+	color: white;
+
+	h1 {
+		font-size: 32px;
+	}
+
+	h2 {
+		font-size: 26px;
+	}
+
+	.christmas-content {
+		width: 60%;
+		margin: auto;
+		padding: 20px;
+		text-align: center;
+	}
+
+	p {
+		color: white;
+	}
+
+	.register-now {
+		@include roundbutton(white);
+		color: darkred;
+		padding: 5px 10px;
+		display: block;
+		text-align: center;
+	}
 }
 
 
