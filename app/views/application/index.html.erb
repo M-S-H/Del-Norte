@@ -13,6 +13,7 @@
 		</div>
 	</section>
 <% else %>
+	<!--
 	<section class="popup-wrapper" id="christmas-camp">
 		<div class="popup christmas-camp">
 			<div class="popup-header">
@@ -26,6 +27,7 @@
 			</div>
 		</div>
 	</section>
+	-->
 <% end %>
 
 
@@ -303,30 +305,30 @@
 			})
 		})
 	<% else %>
-		$(document).ready(function() {
-			if (sessionStorage.getItem('popup:seen')) {
-				document.getElementById('christmas-camp').remove();
-				popup.parentElement.remove(popup);
-			}
+		// $(document).ready(function() {
+		// 	if (sessionStorage.getItem('popup:seen')) {
+		// 		document.getElementById('christmas-camp').remove();
+		// 		popup.parentElement.remove(popup);
+		// 	}
 
-			setTimeout(function() {
-				$(wrapper).addClass('visible');
+		// 	setTimeout(function() {
+		// 		$(wrapper).addClass('visible');
 
-				sessionStorage.setItem('popup:seen', true);
+		// 		sessionStorage.setItem('popup:seen', true);
 
-				setTimeout(function() {
-					$(wrapper).addClass('shown');
-				}, 100);
-			}, 100);
+		// 		setTimeout(function() {
+		// 			$(wrapper).addClass('shown');
+		// 		}, 100);
+		// 	}, 100);
 
-			$('.christmas-close-popup').click(function() {
-				$(wrapper).removeClass('shown');
-				setTimeout(function() {
-					// $(wrapper).removeClass('visible');
-					document.getElementById('christmas-camp').remove();
-					// popup.parentElement.remove(popup);
-				}, 200)
-			})
-		})
+		// 	$('.christmas-close-popup').click(function() {
+		// 		$(wrapper).removeClass('shown');
+		// 		setTimeout(function() {
+		// 			// $(wrapper).removeClass('visible');
+		// 			document.getElementById('christmas-camp').remove();
+		// 			// popup.parentElement.remove(popup);
+		// 		}, 200)
+		// 	})
+		// })
 	<% end %>
 </script>
