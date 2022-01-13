@@ -13,6 +13,7 @@
 		</div>
 	</section>
 <% else %>
+	<!--
 	<section class="popup-wrapper" id="christmas-camp">
 		<div class="popup christmas-camp">
 			<div class="popup-header">
@@ -26,6 +27,7 @@
 			</div>
 		</div>
 	</section>
+	-->
 <% end %>
 
 
@@ -69,7 +71,7 @@
 </section>
 
 
-<% if @alert.active %>
+<% if !@alert.nil? && @alert.active %>
 	<section id="alert">
 		<div class="container">
 			<i class="fa fa-exclamation-triangle"></i><br>
