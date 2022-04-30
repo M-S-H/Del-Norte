@@ -7,11 +7,11 @@ class SermonsController < ApplicationController
 		playlist = Yt::Playlist.new id: 'PLZLN8ggsIxePmqamBkTYJEYHY-3sgenkQ'
 
 		10.times do |x|
-			puts x
 			begin
-				@sermons = playlist.playlist_items.where(public?: true).map {|pi| pi}[0..11]
-				@image = @sermons.first.snippet.data["thumbnails"]["high"]["url"]
-				@image = Base64.encode64(open(@image).read)
+				all = playlist.playlist_items.map {|pi| pi}[0..20]
+				@sermons = all.select {|s| s.public? }[0..3]
+				
+				# .where(privacy_status: 'public').map {|pi| pi}[0..20]
 				break
 			rescue
 				if x == 9
@@ -19,6 +19,9 @@ class SermonsController < ApplicationController
 				end
 			end
 		end
+		
+		@image = @sermons.first.snippet.data["thumbnails"]["high"]["url"]
+		@image = Base64.encode64(open(@image).read)
 	end
 
 	def change_sermon
