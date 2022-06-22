@@ -31,21 +31,21 @@
 <% end %>
 
 
-<!--
+
 <section class="vbs-popup-wrapper" id="popup">
 	<div class="vbs-popup">
 		<a class="close-popup">Close</a>
 		<div>
-			<%= image_tag "vbs_2021.png", width: "50%" %>
+			<%= image_tag "Spark-Studios-logo.png", width: "50%" %>
 		</div>
 		<div>
 			<h2>VBS is almost here!</h2>
-			<p>July 12th - 16th, 9:00am - 12:15pm</p>
-			<%= link_to 'Register for VBS today!', 'https://kideventpro.lifeway.com/myEvent/?id=59892', class: 'register-now' %>
+			<p>July 11th - 15th, 9:00 AM - 12:15 PM</p>
+			<%= link_to 'Register for VBS today!', 'https://kideventpro.lifeway.com/myEvent/?id=64703', target: "_blank", class: 'register-now' %>
 		</div>
 	</div>
 </section>
--->
+
 
 <section id="welcome">
 	<div id="welcome-content" class="container">
@@ -110,6 +110,15 @@
 			<p>Our Bible Study classes have moved online! Contact us for more information.</p>
 		</div> %>
 	</div>
+</section>
+
+
+<section id="vbs">
+	<%= image_tag "vbs_2022.png", width: "200px" %>
+	<h2>VBS</h2>
+	<h3>July 11th - 15th, 9:00 AM - 12:15 PM</h3>
+	<p>Kids will have fun with crafts, missions, recreation, and bible stories that engage them in the idea that they are made for a purpose!</p>
+	<%= link_to "Register Now", "https://kideventpro.lifeway.com/myEvent/?id=64703", target: "_blank" %>
 </section>
 
 
@@ -243,27 +252,6 @@
 	// const wrapper = '.vbs-popup-wrapper'
 	const wrapper = '.popup-wrapper'
 
-	// $(document).ready(function() {
-	// 	if (sessionStorage.getItem('vbs:seen')) { return; }
-
-	// 	setTimeout(function() {
-	// 		$('.vbs-popup-wrapper').addClass('visible');
-
-	// 		sessionStorage.setItem('vbs:seen', true);
-
-	// 		setTimeout(function() {
-	// 			$('.vbs-popup-wrapper').addClass('shown');
-	// 		}, 100);
-	// 	}, 100);
-
-	// 	$('.vbs-popup-wrapper').click(function() {
-	// 		$('.vbs-popup-wrapper').removeClass('shown');
-	// 		setTimeout(function() {
-	// 			$('.vbs-popup-wrapper').removeClass('visible');
-	// 		}, 200)
-	// 	})
-	// })
-
 	<% if @show_popup %>
 		$(document).ready(function() {
 			if (sessionStorage.getItem('popup:seen')) {
@@ -295,6 +283,27 @@
 			})
 		})
 	<% else %>
+		$(document).ready(function() {
+			if (sessionStorage.getItem('vbs:seen')) { return; }
+
+			setTimeout(function() {
+				$('.vbs-popup-wrapper').addClass('visible');
+
+				sessionStorage.setItem('vbs:seen', true);
+
+				setTimeout(function() {
+					$('.vbs-popup-wrapper').addClass('shown');
+				}, 100);
+			}, 100);
+
+			$('.vbs-popup-wrapper').click(function() {
+				$('.vbs-popup-wrapper').removeClass('shown');
+				setTimeout(function() {
+					$('.vbs-popup-wrapper').removeClass('visible');
+				}, 200)
+			})
+		})
+
 		// $(document).ready(function() {
 		// 	if (sessionStorage.getItem('popup:seen')) {
 		// 		document.getElementById('christmas-camp').remove();

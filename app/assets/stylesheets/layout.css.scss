@@ -326,8 +326,8 @@ section {
 
 #vbs {
 	width: 100%;
-	padding: 100px;
-	background: image-url('vbs_bg.jpg') no-repeat center center;
+	padding: 50px;
+	background: image-url('vbs_bg.png') no-repeat center center;
 	background-size: cover;
 
 	@include media(769px) {
