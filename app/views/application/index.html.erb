@@ -31,7 +31,7 @@
 <% end %>
 
 
-
+<!--
 <section class="vbs-popup-wrapper" id="popup">
 	<div class="vbs-popup">
 		<a class="close-popup">Close</a>
@@ -45,6 +45,7 @@
 		</div>
 	</div>
 </section>
+-->
 
 
 <section id="welcome">
@@ -283,26 +284,26 @@
 			})
 		})
 	<% else %>
-		$(document).ready(function() {
-			if (sessionStorage.getItem('vbs:seen')) { return; }
+		// $(document).ready(function() {
+		// 	if (sessionStorage.getItem('vbs:seen')) { return; }
 
-			setTimeout(function() {
-				$('.vbs-popup-wrapper').addClass('visible');
+		// 	setTimeout(function() {
+		// 		$('.vbs-popup-wrapper').addClass('visible');
 
-				sessionStorage.setItem('vbs:seen', true);
+		// 		sessionStorage.setItem('vbs:seen', true);
 
-				setTimeout(function() {
-					$('.vbs-popup-wrapper').addClass('shown');
-				}, 100);
-			}, 100);
+		// 		setTimeout(function() {
+		// 			$('.vbs-popup-wrapper').addClass('shown');
+		// 		}, 100);
+		// 	}, 100);
 
-			$('.vbs-popup-wrapper').click(function() {
-				$('.vbs-popup-wrapper').removeClass('shown');
-				setTimeout(function() {
-					$('.vbs-popup-wrapper').removeClass('visible');
-				}, 200)
-			})
-		})
+		// 	$('.vbs-popup-wrapper').click(function() {
+		// 		$('.vbs-popup-wrapper').removeClass('shown');
+		// 		setTimeout(function() {
+		// 			$('.vbs-popup-wrapper').removeClass('visible');
+		// 		}, 200)
+		// 	})
+		// })
 
 		// $(document).ready(function() {
 		// 	if (sessionStorage.getItem('popup:seen')) {
